@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding:0 ;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#cabeza{
+    width: 95%;
+    height: 80px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    justify-content: end;
+}
+ul,li{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+  align-items: center;
+}
+a{
+    text-decoration: none;
+    font-family: inherit;
+    margin:20px;
+
+}
+
