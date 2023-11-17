@@ -3,22 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Somos alumnos de Codo a Codo, del curso Node JS-JavaScript, comision 23051, con el profesor Sr Alberto Gabriel Feldman"
-    />
-    <meta
-      name="keywords"
-      content="Tienda Funkoshop, articulos de las sagas Star Wars, Pockemon, Harry Potter. Funkos, Remeras, Llaveros"
-    />
-    <title>Home Funkoshop</title>
+    <title>item</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <!-- Estos dos enlaces son para poder trabajar ocn glidjs, sin usar express, para poder hacer el carussell -->
+    <!-- Estos dos enlaces son para poder trabajar ocn glidejs, sin usar express, para poder hacer el carussell -->
     <link
       rel="stylesheet"
       href="http://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
@@ -82,70 +74,48 @@
       </nav>
     </header>
 
-    <!-- seccion correspondiente al banner -->
-    <section class="hero">
-      <article class="hero__content container">
-        <h3 class="hero__title">Nuevos Ingresos</h3>
-        <p class="hero__text">Descubri el proximo Funko Pop de tu coleccion</p>
-        <a class="hero__link" href="./pages/shop.html">SHOP</a>
-        <!-- con css agregamos la imagen de fondo -->
-      </article>
-    </section>
-
-    <!-- seccion de las tres colecciones -->
-    <main class="main-container">
-      <section class="collection container">
-        <article class="collection__content">
-          <h3 class="collection__title">STARS WARS & THE MANDOLARIAN</h3>
-          <p class="collection__text">
-            Disfruta de una saga que sigue agregando personajes a tu coleccion
-          </p>
-          <a class="collection__link" href="./pages/shop.html">VER COLECCION</a>
-        </article>
-        <picture class="collection__cover">
+    <main class="container">
+      <!-- Seccion con el Baby Yoda BLUEBALL -->
+      <section class="item">
+        <picture class="item__card">
           <img
-            src="./img/multimedia/star-wars/baby-yoda-1.webp"
+            class="item__card-front"
+            src="../img/multimedia/star-wars/baby-yoda-1.webp"
+            alt="Figura coleccionable de la serie The Mandolarian"
+          />
+          <img
+            class="item__card-back"
+            src="../img/multimedia/star-wars/baby-yoda-box.webp"
             alt="Figura coleccionable de la serie The Mandolarian"
           />
         </picture>
-      </section>
+        <article class="item__info">
+          <p class="item__info--license">STAR WARS</p>
+          <h3 class="item__info--name">BABY YODA BLUEBALL</h3>
+          <p class="item__info--description">
+            Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian, edicion
+            limitada.
+          </p>
+          <p class="item__info--price">$ 1.799,99.-</p>
 
-      <section class="collection container">
-        <picture class="collection__cover">
-          <img
-            src="./img/multimedia/pokemon/vulpix-1.webp"
-            alt="Figura coleccionable de la serie Pokemon"
-          />
-        </picture>
-        <article class="collection__content">
-          <h3 class="collection__title">POKEMON INDIGO</h3>
-          <p class="collection__text">
-            Atrapa a todos los que puedas y disfruta de una coleccion llena de
-            amigos
+          <div class="item__cart">
+            <button class="item__quantity" type="button">-</button>
+            <input class="item__input" type="text" />
+            <button class="item__quantity" type="button">+</button>
+            <button
+              class="item__agregate btn btn--primary btn--medium"
+              type="submit"
+            >
+              Agregar al carrito
+            </button>
+          </div>
+          <p class="item__promo">
+            <a href="">Ver metodos de pago</a> -3 CUOTAS SIN INTERES
           </p>
-          <a class="collection__link" href="./pages/shop.html">VER COLECCION</a>
         </article>
       </section>
-      <section class="collection container">
-        <article class="collection__content">
-          <h3 class="collection__title">HARRY POTTER</h3>
-          <p class="collection__text">
-            Revive los recuerdos de una saga llena de magia y encanto
-          </p>
-          <a class="collection__link" href="./pages/shop.html">VER COLECCION</a>
-        </article>
-        <picture class="collection__cover">
-          <img
-            src="./img/multimedia/harry-potter/snape-patronus-1.webp"
-            alt="Figura coleccionable de la pelicula Harry Potter"
-          />
-        </picture>
-      </section>
-      <!-- seccion correspondiente al slider -->
-      <!-- agregamos la clase glide para poder usar la libreria -->
-      <!-- la clase container es para limitar el ancho maximo a 1200px -->
       <section class="slider container glide">
-        <h2 class="slider__title">ULTIMOS LANZAMIENTOS</h2>
+        <h2 class="slider__title">PRODUCTOS RELACIONADOS</h2>
         <!-- En la docu de la libreria nos pide agregar un nuevo div con la clase que se indica -->
         <div class="glide__track" data-glide-el="track">
           <ul class="slider__items glide__slides">
@@ -240,7 +210,6 @@
         </div>
       </section>
     </main>
-
     <footer class="footer">
       <nav class="nabvar container">
         <ul class="nabvar__item">
@@ -250,14 +219,14 @@
           <li class="nabvar__items">
             <a class="nabvar__link" href="./pages/register.html">REGISTRARSE</a>
           </li>
-          
+
           <li class="nabvar__items">
             <a class="nabvar__link" href="./pages/contacto.html">CONTACTO</a>
           </li>
         </ul>
         <picture>
           <img
-            src="./img/multimedia/branding/isotype.svg"
+            src="../img/multimedia/branding/isotype.svg"
             alt="Isotipo logo tienda Funkoshop"
           />
         </picture>
@@ -265,13 +234,10 @@
       <p class="footer__copy">All rights reserved 2023- Funkoshop&COPY;</p>
       <p class="footer__copy">Curso Codo a Codo- Comision 23051</p>
     </footer>
-    <!-- Este script es para iconnify, donde bajaremos los chevrones del header -->
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-    <!-- Este script es para la libreria glidejs, para el carussell -->
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
+
     <!-- hay que agregar este nuevo script para que funcione glide: -->
-    <script src="./js/glide.js">
-     
-    </script>
+    <script src="../js/glide.js"></script>
   </body>
 </html>
