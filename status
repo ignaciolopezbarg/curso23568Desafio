@@ -1,0 +1,53 @@
+[33mcommit 5ffc6a761788e00b5f58891bef5569de4326ab32[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: ignacio lopez barg <ignaciolopezbar@hotmail.com>
+Date:   Fri Nov 17 18:56:13 2023 -0300
+
+    se agrego el archivo .gitignore
+
+[33mcommit 3d642ccaa27702abdd7de61761b6667552a06126[m
+Author: ignacio lopez barg <ignaciolopezbar@hotmail.com>
+Date:   Fri Nov 17 18:51:31 2023 -0300
+
+    correcciones en las meta
+
+[33mcommit 60e4373e019c7b0dd547280fe8f0e7d1cabce9b9[m
+Author: ignacio lopez barg <ignaciolopezbar@hotmail.com>
+Date:   Fri Nov 17 18:40:15 2023 -0300
+
+    se crea repo remoto
+
+[33mcommit 32d9639f5592307f5fd8170b4bf1f00c9dbef1af[m
+Author: ignacio lopez barg <ignaciolopezbar@hotmail.com>
+Date:   Tue Nov 14 20:24:26 2023 -0300
+
+    se agrego el carusell
+
+[33mcommit ac868c1a1d58ffe4607fae447ea1bedca417b806[m
+Author: ignacio lopez barg <ignaciolopezbar@hotmail.com>
+Date:   Mon Nov 13 11:27:29 2023 -0300
+
+    cambios para el carusell
+
+[33mcommit 1a37ee289ff132fce01bcb9fe325b0b264cf1527[m
+Author: ignacio lopez barg <ignaciolopezbar@hotmail.com>
+Date:   Fri Nov 3 21:57:37 2023 -0300
+
+    2
+
+[33mcommit a402b4c054d6fb48d50c8eb6b73ce026cfe1e717[m
+Author: ignacio lopez barg <ignaciolopezbar@hotmail.com>
+Date:   Thu Nov 2 17:02:55 2023 -0300
+
+    avances en el maquetado y estilos
+
+[33mcommit 99659c77fb7500e69227a0e36cbb93b721394096[m
+Author: ignacio lopez barg <ignaciolopezbar@hotmail.com>
+Date:   Wed Nov 1 08:27:17 2023 -0300
+
+     estilos del html
+
+[33mcommit 7ddc0ae84ed32e6eb0fd61f36403bdf9016eca18[m
+Author: ignacio lopez barg <ignaciolopezbar@hotmail.com>
+Date:   Sun Oct 29 21:57:28 2023 -0300
+
+    se inicio el maquetado del proyecto
