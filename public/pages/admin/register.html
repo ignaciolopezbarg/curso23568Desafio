@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+    crossorigin="anonymous"
+  />
+    <link rel="stylesheet" href="../../estilos/register.css">
+    <title>REGISTER</title>
+</head>
+<body>
+     <!-- header -->
+     <header >
+        <!-- inicio de navbar -->
+        <nav class="nabvar container2">
+            <!-- a la clase le agregamos container porque definimos que container no supere el ancho de 1200PX -->
+            <!-- usamos la terminologia BEM,block element modifier, a los hijos le damos el nombre del padre modificado -->
+            <picture class="nabvar__logo">
+                <a href="../../inicio.html">
+                    <img src="../../img/multimedia/branding/logo_light_horizontal.svg"
+                        alt="isologotipo de la marca Funkoshop" />
+                </a>
+            </picture>
+            <ul class="nabvar__menu">
+                <li class="nabvar__item with-submenu">
+                    <!-- le agregamos la clase with submenu para que funcione el desplegable -->
+                    <a class="nabvar__link with-icon" href="../../inicio.html">VER TIENDA</a>
+                    <!-- El chevron lo bajamos de la libreria iconify, y agregamos el script para que funcione -->
+                    <!-- agregamos la clase with-icon que nos sirve de ayuda para posicionar lo que tiene el enlace -->
+               
+
+                <li class="nabvar__item">
+                    <a class="nabvar__link" href="">ADMIN</a>
+                </li>
+                <li class="nabvar__item">
+                    <a class="nabvar__link" href="">SALIR</a>
+                </li>
+                <li class="nabvar__item">
+                    <a class="nabvar__cart" href="../shop/carrito.html"><img src="../../img/multimedia/icons/cart-icon.svg"
+                            alt="logo del carrito" /></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- inicio de cuenta -->
+
+    <div class="container">
+        <label for="uname"><b>Nombre de Usuario</b></label>
+        <input type="text" placeholder="Ingrese su nombre de usuario" name="uname" required>
+
+        <label for="psw"><b>Contraseña</b></label>
+        <input type="password" placeholder="Ingrese su contraseña" name="psw" required>
+
+        <button type="submit" class="btn">Registrarse</button>
+    </div>
+
+<!--footer-->
+    <footer class="footer">
+        <nav class="nabvar container2">
+            <ul class="nabvar__item">
+                <li class="nabvar__items">
+                    <a class="nabvar__link" href="..//shop/shop.html">SHOP</a>
+                </li>
+                <li class="nabvar__items">
+                    <a class="nabvar__link" href="../admin/register.html">REGISTRARSE</a>
+                </li>
+                <li class="nabvar__items">
+                    <a class="nabvar__link" href="../admin/login.html">LOGIN</a>
+                </li>
+                <li class="nabvar__items">
+                    <a class="nabvar__link" href="../shop/contacto.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture>
+                <img src="../../img/multimedia/branding/isotype.svg" alt="Isotipo logo tienda Funkoshop" />
+            </picture>
+        </nav>
+        <p class="footer__copy">All rights reserved 2023- Funkoshop&COPY;</p>
+        <p class="footer__copy">Curso Codo a Codo- Comision 23051</p>
+    </footer>
+
+
+
+
+
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+kD4Ck5BdPtF+to8xMp9Mvc9E3I3WQ8wKUi3A0/GIi2vz9Z+GoiPkYs+gydKh3GpC/gZcI2Pf3Cj02qNW43wXxMf3oP81p3V7+8fvE+04vflMG22d6/lwZYhN42C9Xp28O17xOvT4A0XUt/Lk/g" crossorigin="anonymous"></script>
+<script src="../../js/register.js"></script>
+</body>
+</body>
+</html>

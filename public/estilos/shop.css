@@ -1,0 +1,321 @@
+:root {
+    /* paleta de colores */
+    --primary-solid: rgb(255, 51, 51);
+    --primary-900: rgb(255, 51, 51, 0.9);
+    --primary-500: rgb(255, 51, 51, 0.5);
+    --primary-300: rgb(255, 51, 51, 0.3);
+
+    --secondary-solid: rgb(29, 132, 181);
+    --secondary-900: rgb(29, 132, 181, 0.9);
+    --secondary-500: rgb(29, 132, 181, 0.5);
+    --secondary-300: rgb(29, 132, 181, 0.3);
+
+    --dark-solid: rgb(31, 31, 31);
+    --dark-900: rgb(31, 31, 31, 0.9);
+    --dark-500: rgb(31, 31, 31, 0.5);
+    --dark-300: rgb(31, 31, 31, 0.3);
+
+    /* background oscuro y claro: */
+    --dark-bg--solid: #30343f;
+    --light-bg-solid: #fafaff;
+    --light-font-solid: #ffffff;
+
+    /* tipografias: */
+    --base-font: Arial, Helvetica, sans-serif;
+    --alternative-font: Verdana, Geneva, Tahoma, sans-serif;
+
+    /* font-size */
+    --font-display: 4.6em;
+    --font-jumbo: 3.8em;
+    --font-xlarge: 3em;
+    --font-large: 2.4em;
+    --font-medium: 1.8em;
+    --font-small: 1.6em;
+    --font-xsmall: 1.4em;
+
+    /* spacing */
+    --spacing-128: 12.8rem;
+    --spacing-68: 6.8rem;
+    --spacing-36: 3.6rem;
+    --spacing-28: 2.8rem;
+    --spacing-24: 2.4rem;
+    --spacing-20: 2rem;
+    --spacing-16: 1.6rem;
+    --spacing-12: 1.2rem;
+    --spacing-8: 0.8rem;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--base-font);
+    font-size: 62.5%;
+    color: var(--dark-solid);
+}
+
+/* /saco los subrayados de los enlaces/ */
+a {
+    text-decoration:none;
+    font-family: inherit;
+    color: inherit;
+}
+
+header,
+footer {
+    font-family: var(--alternative-font);
+    color: var(--light-font-solid);
+}
+
+ul,
+li {
+    list-style-type: none;
+    color: white;
+}
+
+p {
+    font-size: 1.8em;
+}
+
+/* fijo el width que se referira siempre a la etiqueta del padre */
+img {
+    width: 100%;
+}
+
+/* limitamos el ancho del contenedor de la pagina a 1200px, que es lo maximo que crecera aun en resoluciones mayores */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* /header/ */
+header {
+    background-color: var(--dark-bg--solid);
+    padding: var(--spacing-36);
+    position: relative;
+}
+
+.nabvar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nabvar__logo {
+    max-width: 300px;
+}
+
+.nabvar__menu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-36);
+}
+
+
+
+.nabvar__link {
+    font-size: var(--font-medium);
+    padding: var(--spacing-8) var(--spacing-16);
+    display: inline-block;
+    position: relative;
+    /* transition: background .3s ease-in-out;  */
+}
+
+.nabvar__link:hover {
+    background-color: red;
+}
+
+.with-icon {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+}
+
+.with-submenu:hover .submenu {
+    display: block;
+
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: var(--dark-bg--solid);
+    width: 300px;
+}
+
+.submenu__link {
+    display: block;
+    padding: var(--spacing-8) var(--spacing-16);
+    font-size: var(--font-medium);
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Estilos para la sección de productos destacados */
+.destacado {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Estilos para cada producto */
+.product {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la imagen del producto */
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para el título del producto */
+.product h3 {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+/* Estilos para la descripción del producto */
+.product p {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+/* Estilos para el precio del producto */
+.product .price {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #007bff;
+    text-align: center;
+}
+
+
+.filter-container{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.filter-section{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+
+.pagination-cont {
+    width: 100%;
+    text-align: center;
+}
+
+.pagination {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.page-link {
+    display: inline-block;
+    margin: 0 5px;
+    background-color: #313031;
+
+}
+
+.page-link:hover {
+    background-color: #000000;
+
+}
+
+.page-link.active {
+    background-color: #333;
+    color: white;
+}
+
+
+
+/* footer */
+.footer {
+    max-width: 100%;
+    background-color: #333;
+
+    padding: 20px;
+
+    text-align: center;
+
+    color: #fff;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+    clear: none;
+}
+
+
+.footer ul {
+
+    list-style-type: none;
+
+    padding: 0;
+
+}
+
+
+.footer ul li {
+
+    display: inline;
+
+    margin: 0 10px;
+
+}
+
+
+.footer ul li a {
+
+    color: #fff;
+
+    text-decoration: none;
+
+}
+
+
+.footer ul li a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+
+
+
+@media (min-width: 768px) {
+    .product {
+        width: calc(33.33% - 20px);
+    }
+
+    .filter {
+        max-width: 300px;
+        margin-right: 20px;
+    }
+}
