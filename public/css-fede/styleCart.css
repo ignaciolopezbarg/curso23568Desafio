@@ -78,7 +78,10 @@ img{
     display: inline-block;
     position: relative;
 }
-
+/* .navbar__item:nth-child(4){
+    border: 3px solid black;
+    position: relative;
+} */
 .navbar__link--icon{
     display: flex;
     align-items: center;
@@ -91,10 +94,15 @@ img{
 .navbar__link:hover .icon-animation{
     transform: rotate(90deg);
     transition: transform .3s;
-    /* background-color: #505050; */
 }
 
-
+.navbar__item-cart{
+    background-color: var(--color-red);
+    padding: 5px;
+    border-radius: 4px;
+    position: absolute;
+    top: -15px;
+}
 .submenu{
     display: none;
     position: absolute;

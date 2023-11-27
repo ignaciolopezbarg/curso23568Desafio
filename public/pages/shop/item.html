@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ITEM</title>
+    <title>item</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,58 +12,47 @@
     />
     <!-- Estos dos enlaces son para poder trabajar ocn glidejs, sin usar express, para poder hacer el carussell, los pasamos al css y vienen con import -->
 
-    <link rel="stylesheet" href="../../estilos/style.css" />
+    <link rel="stylesheet" href="/public/estilos/style.css" />
   </head>
   <body>
     <!-- header -->
     <header>
-      <nav class="nabvar container">
-        <!-- a la clase le agregamos container porque definimos que container no supere el ancho de 1200PX -->
-        <!-- usamos la terminologia BEM,block element modifier, a los hijos le damos el nombre del padre modificado -->
-        <picture class="nabvar__logo">
-          <a href="../../inicio.html">
-            <img
-              src="../../img/multimedia/branding/logo_light_horizontal.svg"
-              alt="isologotipo de la marca Funkoshop"
-            />
-          </a>
-        </picture>
-        <ul class="nabvar__menu">
-          <li class="nabvar__item with-submenu">
-            <!-- le agregamos la clase with submenu para que funcione el desplegable -->
-            <a class="nabvar__link with-icon" href=""
-              >SHOP <iconify-icon icon="bi:chevron-down"></iconify-icon
-            ></a>
-            <!-- El chevron lo bajamos de la libreria iconify, y agregamos el script para que funcione -->
-            <!-- agregamos la clase with-icon que nos sirve de ayuda para posicionar lo que tiene el enlace -->
-            <ul class="submenu">
-              <li class="submenu__item">
-                <a class="submenu__link" href="">FUNKOS</a>
-              </li>
-              <li class="submenu__item">
-                <a class="submenu__link" href="">REMERAS</a>
-              </li>
-              <li class="submenu__item">
-                <a class="submenu__link" href="">LLAVEROS</a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="nabvar__item">
-            <a class="nabvar__link" href="contacto.html">CONTACTO</a>
-          </li>
-          <li class="nabvar__item">
-            <a class="nabvar__link" href="../admin/login.html">LOGIN</a>
-          </li>
-          <li class="nabvar__item">
-            <a class="nabvar__cart" href="carrito.html"
-              ><img
-                src="../../img/multimedia/icons/cart-icon.svg"
-                alt="logo del carrito"
-            /></a>
-          </li>
+      <nav class="navbar container">
+        <div class="navbar__logo">
+            <a href="../pages/index.html" class="navbar__link-banner">
+                <img src="/public/img/multimedia/branding/logo_light_horizontal.svg" alt="logo_FUNKOSHOP" class="navbar__img">
+            </a>
+        </div>
+    
+        <ul class="navbar__list">
+            <li class="navbar__item navbar__item--with-submenu">
+                <a href="#" class="navbar__link navbar__link--icon">SHOP<i class="fa-solid fa-angle-right icon-animation " class="navbar__icon"></i></a>
+                <ul class="submenu">
+                    <li class="submenu__item">
+                        <a href="../pages/index.html" class="submenu__link">FUNKOS</a>
+                    </li>
+                    <li class="submenu__item">
+                        <a href="#" class="submenu__link">LLAVEROS</a>
+                    </li>
+                    <li class="submenu__item">
+                        <a href="#" class="submenu__link">REMERAS</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="navbar__item">
+                <a href="#" class="navbar__link">CONTACTO</a>
+            </li>
+            <li class="navbar__item">
+                <a href="../pages/Login.html" class="navbar__link">LOGIN</a>
+            </li>
+            <li class="navbar__item">
+                <a href="../pages/Carrito.html" class="navbar__link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="navbar__item-cart">0</span>
+                </a>
+            </li>
         </ul>
-      </nav>
+    </nav>
     </header>
 
     <main class="container">
@@ -94,20 +83,14 @@
             <button id="subtract" class="item__quantity" type="button">
               -
             </button>
-            <input
-              class="item__input"
-              type="text"
-              placeholder="0"
-              name="quantity"
-              id="quantity"
-            />
+            <input class="item__input" type="text" placeholder="0" name="quantity" id="quantity">
             <button id="add" class="item__quantity" type="button">+</button>
-            <button class="item__agregate" type="submit">
+            <button class="item__agregate" type="submit" id="addToCartBtn">
               Agregar al carrito
             </button>
           </div>
           <p class="item__promo">
-            <a href="">Ver metodos de pago</a> -3 CUOTAS SIN INTERES
+            <a href="#">Ver metodos de pago</a> - 3 CUOTAS SIN INTERES
           </p>
         </article>
       </section>
@@ -208,33 +191,33 @@
       </section>
     </main>
     <footer class="footer">
-      <nav class="nabvar container">
-        <ul class="nabvar__item">
-          <li class="nabvar__items">
-            <a class="nabvar__link" href="shop.html">SHOP</a>
-          </li>
-          <li class="nabvar__items">
-            <a class="nabvar__link" href="../admin/register.html">REGISTRARSE</a>
-          </li>
-
-          <li class="nabvar__items">
-            <a class="nabvar__link" href="contacto.html">CONTACTO</a>
-          </li>
-        </ul>
-        <picture>
-          <img
-            src="../../img/multimedia/branding/isotype.svg"
-            alt="Isotipo logo tienda Funkoshop"
-          />
-        </picture>
-      </nav>
-      <p class="footer__copy">All rights reserved 2023- Funkoshop&COPY;</p>
-      <p class="footer__copy">Curso Codo a Codo- Comision 23051</p>
-    </footer>
+      <div class="footer__container container">
+          <nav class="footer__navbar navbar">
+              <ul class="footer__list navbar__list">
+                  <li class="footer__item">
+                      <a href="../shop/shop.html" class="footer__link navbar__link"> SHOP</a>
+                  </li>
+                  <li class="footer__item">
+                      <a href="../admin/login.html" class="footer__link navbar__link">INGRESAR</a>
+                  </li>
+                  <li class="footer__item">
+                      <a href="../shop/contacto.html" class="footer__link navbar__link"">CONTACTO</a>
+                  </li>
+              </ul>
+          </nav>
+          <div class="footer__rights">
+              <p class="footer__text">All rights reserved 2023 - Funkoshop &copy;</p>
+          </div>
+          <div class="footer__logo ">
+              <img src="../../img/multimedia/branding/isotype.svg" alt="logo_FUNKOSHOP" class="footer__img">
+          </div>
+      </div>
+  </footer>
+    <script src="https://kit.fontawesome.com/d82e4588df.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
-    <script src="../../js/item.js"></script>
+    <script src="../../js-fede/item.js"></script>
     <!-- hay que agregar este nuevo script para que funcione glide: -->
-    <script src="../../js/glide.js"></script>
+    <script src="/public/js-fede/glide.js"></script>
   </body>
 </html>
