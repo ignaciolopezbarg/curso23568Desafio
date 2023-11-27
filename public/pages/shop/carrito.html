@@ -3,10 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito</title>
-    <link rel="stylesheet" href="../estilos/style.css">
+    <link rel="stylesheet" href="../../css-fede/styleCart.css">
+    <link rel="stylesheet" href="../../css-fede/Normalize.css"> <!-- falta esto -->
+    <title>CARRITO</title>
 </head>
 <body>
-    <h1>CARRITO</h1>
+    <header class="header">
+        <nav class="navbar container">
+            <div class="navbar__logo">
+                <a href="../../inicio.html" class="navbar__link-banner">
+                    <img src="../../img/multimedia/branding/logo_light_horizontal.svg" alt="logo_FUNKOSHOP" class="navbar__img">
+                </a>
+            </div>
+        
+            <ul class="navbar__list">
+                <li class="navbar__item navbar__item--with-submenu">
+                    <a href="#" class="navbar__link navbar__link--icon">SHOP<i class="fa-solid fa-angle-right icon-animation " class="navbar__icon"></i></a>
+                    <ul class="submenu">
+                        <li class="submenu__item">
+                            <a href="../../inicio.html" class="submenu__link">FUNKOS</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="#" class="submenu__link">LLAVEROS</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="#" class="submenu__link">REMERAS</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link">CONTACTO</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="../admin/login.html" class="navbar__link">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="../shop/Carrito.html" class="navbar__link">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main container">
+        
+        <section class="cart">
+            <div class="cart__title-container">
+                <h1 class="cart__title"> CARRITO DE COMPRAS</h1>
+                <hr class="cart__line">
+            </div>
+            
+            <ul class="cart__subtitle position container-shadow ">
+                <li class="cart__subtitle-text">DETALLES DEL PRODUCTO</li>
+                <li class="cart__subtitle-text">CANTIDAD</li>
+                <li class="cart__subtitle-text">TOTAL</li>
+            </ul>
+
+            <section class="cart__items">
+
+                <article class="cart__item position container-shadow">
+                    <div class="cart__product">
+                        <picture class="cart__product-img">
+                            <img src="../../img/multimedia/star-wars/baby-yoda-1.webp" alt="item-image" class="cart__img">
+                        </picture>
+                        <div class="cart__product-detail">
+                            <h2 class="cart__product-title">BABY YODA BLUEBALL</h2>
+                            <p class="cart__product-text">STAR WARS</p>
+                            <div class="cart__product-container-price" >
+                                <p class="cart__product-price-text">precio: $</p>
+                                <p class="cart__product-price">1799,99</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="cart__quantity position-quantity">
+                        <div class="cart__quantity-btns">
+                            <input type="number" placeholder="1" value="1" min="1" name="" class="cart__number-quantity">
+                            <div class="cart__btn-quantity">
+                                <i class="fa-solid fa-plus bottom-decrease-increase"></i>
+                                <i class="fa-solid fa-minus bottom-decrease-increase"></i>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="cart__price">
+                        <span>Total: $</span>
+                        <p class="cart__price-total" >1799,99</p>
+                    </div>
+                    
+                    <div class="cart__delete-icon">
+                        <i class="fa-solid fa-trash "></i>
+                    </div>
+                    
+                </article>
+                
+                <article class="cart__item position container-shadow">
+                    
+                    <div class="cart__product">
+                        <picture class="cart__product-img">
+                            <img src="../../img/multimedia/pokemon/pidgeotto-1.webp" alt="item-image" class="cart__img">
+                        </picture>
+                        <div class="cart__product-detail">
+                            <h2 class="cart__product-title">PIDGEOTTO</h2>
+                            <p class="cart__product-text">POKEMON</p>
+                            <div class="cart__product-container-price" >
+                                <p class="cart__product-price-text">precio: $</p>
+                                <p class="cart__product-price">1500</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart__quantity position-quantity">
+                        <div class="cart__quantity-btns">
+                            <input type="number" placeholder="1" value="1" min="1" name="" class="cart__number-quantity">
+                            <div class="cart__btn-quantity">
+                                <i class="fa-solid fa-plus bottom-decrease-increase"></i>
+                                <i class="fa-solid fa-minus bottom-decrease-increase"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart__price">
+                        <span>Total: $</span>
+                        <p class="cart__price-total" >1500</p>
+                    </div>
+                    <div class="cart__delete-icon">
+                        <i class="fa-solid fa-trash "></i>
+                    </div>
+
+                </article>
+                
+            </section>
+            
+        </section>
+        
+        <section class="cart__resumen">
+            <div class="cart__resumen-title-container cart__title">
+                <h1 class="cart__resumen-title">RESUMEN <hr class="cart__resumen-line cart__line"></h1>
+            </div>
+            <div class="cart__total-items container-shadow">
+                <div class="cart__resumen-items">
+                    <div class="cart__resumen-text cart__resumen-items-padding">
+                        <p >CANTIDAD DE ELEMENTOS</p>
+                        <p >SUBTOTAL</p>
+                        <p >ENVIO</p>
+                    </div>
+                    <div class="cart__resumen-numbers cart__resumen-items-padding">
+                        <!-- <p>3</p> -->
+                        <div class="cart__resumen-numbers-subtotal">
+                            <p class="cart__resumen-numbers-amount" >2</p>
+                        </div>
+                        <div class="cart__resumen-numbers-subtotal">
+                            <span>$</span>
+                            <p class="cart__resumen-numbers-subtotal-value">0</p>
+                        </div>
+                        <div class="cart__resumen-numbers-subtotal">
+                            <span>$</span>
+                            <p class="cart__resumen-numbers-envio-value">300</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-total">
+                    <hr class="cart__resumen-bar cart__line">
+                    <div class="cart__resumen-total-payment">
+                        <p>TOTAL</p>
+                        <div class="cart__resumen-numbers-subtotal">
+                            <span>$</span>
+                            <p class="cart__resumen-numbers-total">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="cart__btn-payment btn-shadow">IR A PAGAR</button>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer__container container">
+            <nav class="footer__navbar navbar">
+                <ul class="footer__list navbar__list">
+                    <li class="footer__item">
+                        <a href="../shop/shop.html" class="footer__link navbar__link"> SHOP</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="../admin/login.html" class="footer__link navbar__link">INGRESAR</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="../shop/contacto.html" class="footer__link navbar__link"">CONTACTO</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="footer__rights">
+                <p class="footer__text">All rights reserved 2023 - Funkoshop &copy;</p>
+            </div>
+            <div class="footer__logo ">
+                <img src="../../img/multimedia/branding/isotype.svg" alt="logo_FUNKOSHOP" class="footer__img">
+            </div>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/d82e4588df.js" crossorigin="anonymous"></script>
+    <script src="../../js-fede/Carrito (1).js"></script>
+    <script src="../../js-fede/FuncionAgregarItemCarrito.js"></script> -->
 </body>
 </html>
