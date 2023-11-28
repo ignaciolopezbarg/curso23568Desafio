@@ -305,7 +305,6 @@ img{
 }
 
 .cart__resumen-items{
-    font-family: var(--alternative-font);
     font-weight: 700;
     display: flex;
     justify-content: space-between;
@@ -317,6 +316,7 @@ img{
 .cart__resumen-text{
     display: flex;
     flex-direction: column;
+    font-family: var(--alternative-font);
 }
 .cart__resumen-numbers-subtotal{
     display: flex;
@@ -327,6 +327,13 @@ img{
     /* border: 3px solid black; */
     text-align: right;
     /* width: 50px; */
+    width: 80px;
+    font-family: var(--font-base);
+}
+.cart__resumen-numbers-envio-value{
+    /* border: 2px solid red; */
+    padding: 10;
+    vertical-align: middle;
 }
 .cart__resumen-items-padding{
     padding: 10px;
@@ -338,11 +345,12 @@ img{
 
 
 .cart__resumen-total-payment{
-    font-family: var(--alternative-font);
+    font-family: var(--font-base);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+    /* border: 3px solid black; */
 }
 
 .cart__resumen-total-payment p{
