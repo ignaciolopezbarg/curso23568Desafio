@@ -18,46 +18,59 @@ const valorEnvio = document.querySelector(".cart__resumen-numbers-envio-value")
 
 const valorTotalCompra = document.querySelector(".cart__resumen-numbers-total")
 
-console.log(elementosPorUnidad)
-console.log(agregar)
-console.log(desagregar)
-console.log(total)
-console.log(precioUnidad)
-console.log(botonEliminar)
-console.log(itemsAgregados)
-console.log(valorEnvio)
-console.log(valorTotalCompra)
+// console.log(elementosPorUnidad)
+// console.log(agregar)
+// console.log(desagregar)
+// console.log("precio original del producto por unidad")
+// console.log(precioUnidad[0].textContent.replace(".", ""))
+// console.log(botonEliminar)
+// console.log("item Seleccionados")
+// console.log(itemsAgregados.textContent)
 
-console.log(itemsAgregados.textContent)
-console.log(valorTotalCompra.textContent)
+
 
 
 // crea un valor de envio random
 valorEnvio.textContent = Math.floor(Math.random() * (1000 - 100 + 1)) + 100;
+// valorEnvio.textContent = 300
 
 // el valorsubtotal es hacer sumar cada (precio de unidad del producto * elementos seleccionado de ese producto)
-valorSubtotal.textContent = parseFloat(itemsAgregados.textContent) * parseFloat(precioUnidad[0].textContent)
-total[0].textContent = parseFloat(itemsAgregados.textContent) * parseFloat(precioUnidad[0].textContent)
 
-console.log(valorSubtotal.textContent)
+valorSubtotal.textContent = parseFloat(itemsAgregados.textContent) * parseFloat(precioUnidad[0].textContent.replace(".", ""));
+
+total[0].textContent = parseFloat(itemsAgregados.textContent) * parseFloat(precioUnidad[0].textContent.replace(".", ""));
+
+valorTotalCompra.textContent = parseFloat(total[0].textContent.replace(".", "")) + parseFloat(valorEnvio.textContent);
+
+console.log(total[0].textContent)
+
+// console.log("precio del producto segun cantidad elementos")
+// console.log(total[0].textContent+parseInt(valorEnvio.textContent))
+
+// console.log("valor envio")
+// console.log(valorEnvio.textContent)
+// console.log("valor total de compra")
+// console.log(valorTotalCompra)
+// console.log(valorSubtotal.textContent)
 
 agregar.forEach( (agregar,i) => {
     agregar.addEventListener('click', ()=>{
-
+        
         let cantidadDeElementos = parseInt(itemsAgregados.textContent)
-        let subtotal= parseFloat(valorSubtotal.textContent)
+        let subtotal= parseFloat(valorSubtotal.textContent.replace(".", ""))
         let totalCompra = parseFloat(valorTotalCompra.textContent)
-       
+        
         elementosPorUnidad[i].value = parseInt(elementosPorUnidad[i].value) + 1;
         
-        total[i].textContent = (parseFloat(total[i].textContent) + parseFloat(precioUnidad[i].textContent)).toFixed(2);
+        total[i].textContent = (parseFloat(total[i].textContent.replace(".", "")) + parseFloat(precioUnidad[i].textContent.replace(".", "")));
         
         itemsAgregados.textContent = cantidadDeElementos + 1;
-
-        valorTotalCompra.textContent = totalCompra + parseFloat(precioUnidad[i].textContent);
-
-        valorSubtotal.textContent = subtotal + parseFloat(precioUnidad[i].textContent)
         
+        valorTotalCompra.textContent = totalCompra + parseFloat(precioUnidad[i].textContent.replace(".", ""));
+        
+        valorSubtotal.textContent = subtotal + parseFloat(precioUnidad[i].textContent.replace(".", ""))
+        
+        console.log(total[i].textContent)
     })
 })
 
@@ -66,17 +79,17 @@ desagregar.forEach( (desagregar, i) => {
         // console.log(e)
         let elemPorUnidad = parseInt(elementosPorUnidad[i].value)
         let cantidadDeElementos = parseInt(itemsAgregados.textContent)
-        let subtotal= parseFloat(valorSubtotal.textContent)
+        let subtotal= parseFloat(valorSubtotal.textContent.replace(".", ""))
         let totalCompra = parseFloat(valorTotalCompra.textContent)
         
         if(elemPorUnidad > 1){
             elementosPorUnidad[i].value = parseInt(elementosPorUnidad[i].value) - 1;
             
-            total[i].textContent = parseFloat(total[i].textContent) - parseFloat(precioUnidad[i].textContent).toFixed(2);
+            total[i].textContent = parseFloat(total[i].textContent.replace(".", "")) - parseFloat(precioUnidad[i].textContent.replace(".", ""));
             
             itemsAgregados.textContent = cantidadDeElementos - 1;
-            valorSubtotal.textContent = subtotal - parseFloat(precioUnidad[i].textContent)
-            valorTotalCompra.textContent = totalCompra - parseFloat(precioUnidad[i].textContent);
+            valorSubtotal.textContent = subtotal - parseFloat(precioUnidad[i].textContent.replace(".", ""))
+            valorTotalCompra.textContent = totalCompra - parseFloat(precioUnidad[i].textContent.replace(".", ""));
 
         }
     })
@@ -86,14 +99,14 @@ botonEliminar.forEach( (botonEliminar,i) => {
     botonEliminar.addEventListener('click',(e) => {
         let articuloEliminado = e.target
         let cantidadDeElementos = parseInt(itemsAgregados.textContent)
-        let subtotal= parseFloat(valorSubtotal.textContent)
+        let subtotal= parseFloat(valorSubtotal.textContent.replace(".", ""))
         let totalCompra = parseFloat(valorTotalCompra.textContent)
         let envio = parseInt(valorEnvio.textContent)
         
             articuloEliminado.parentElement.parentElement.remove();
             itemsAgregados.textContent = cantidadDeElementos - parseInt(elementosPorUnidad[i].value);
-            valorSubtotal.textContent = subtotal - parseFloat(precioUnidad[i].textContent)*parseInt(elementosPorUnidad[i].value);
-            valorTotalCompra.textContent = totalCompra - parseFloat(precioUnidad[i].textContent)*parseInt(elementosPorUnidad[i].value);
+            valorSubtotal.textContent = subtotal - parseFloat(precioUnidad[i].textContent.replace(".", ""))*parseInt(elementosPorUnidad[i].value);
+            valorTotalCompra.textContent = totalCompra - parseFloat(precioUnidad[i].textContent.replace(".", ""))*parseInt(elementosPorUnidad[i].value);
             if(itemsAgregados.textContent == "0"){
     
                 valorEnvio.textContent = parseInt(valorEnvio.textContent) - envio
