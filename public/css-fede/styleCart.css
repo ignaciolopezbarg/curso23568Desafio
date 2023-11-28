@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'raleway';
-    src: url(/assets/fonts/Raleway-VariableFont_wght.ttf);
+    src: url(/public/fonts/Raleway-VariableFont_wght.ttf);
 }
 
 @font-face {
     font-family: 'inter';
-    src: url(/assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+    src: url(/public/fonts/Inter-VariableFont_slnt\,wght.ttf);
 }
 
 :root{
@@ -78,7 +78,10 @@ img{
     display: inline-block;
     position: relative;
 }
-
+/* .navbar__item:nth-child(4){
+    border: 3px solid black;
+    position: relative;
+} */
 .navbar__link--icon{
     display: flex;
     align-items: center;
@@ -91,10 +94,15 @@ img{
 .navbar__link:hover .icon-animation{
     transform: rotate(90deg);
     transition: transform .3s;
-    /* background-color: #505050; */
 }
 
-
+.navbar__item-cart{
+    background-color: var(--color-red);
+    padding: 5px;
+    border-radius: 4px;
+    position: absolute;
+    top: -15px;
+}
 .submenu{
     display: none;
     position: absolute;
@@ -297,7 +305,6 @@ img{
 }
 
 .cart__resumen-items{
-    font-family: var(--alternative-font);
     font-weight: 700;
     display: flex;
     justify-content: space-between;
@@ -309,6 +316,7 @@ img{
 .cart__resumen-text{
     display: flex;
     flex-direction: column;
+    font-family: var(--alternative-font);
 }
 .cart__resumen-numbers-subtotal{
     display: flex;
@@ -319,6 +327,13 @@ img{
     /* border: 3px solid black; */
     text-align: right;
     /* width: 50px; */
+    width: 80px;
+    font-family: var(--font-base);
+}
+.cart__resumen-numbers-envio-value{
+    /* border: 2px solid red; */
+    padding: 10;
+    vertical-align: middle;
 }
 .cart__resumen-items-padding{
     padding: 10px;
@@ -330,11 +345,12 @@ img{
 
 
 .cart__resumen-total-payment{
-    font-family: var(--alternative-font);
+    font-family: var(--font-base);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+    /* border: 3px solid black; */
 }
 
 .cart__resumen-total-payment p{

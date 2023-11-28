@@ -103,59 +103,79 @@ header {
   background-color: var(--dark-bg--solid);
   padding: var(--spacing-36);
 }
-
-.nabvar {
+.navbar{
+  background-color: var(--color-dark-bg);
+  font-family: var(--font-base);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-.nabvar__logo {
-  max-width: 300px;
-}
-
-.nabvar__menu {
+.navbar__list{
+  list-style: none;
   display: flex;
   align-items: center;
-  gap: var(--spacing-36);
+  gap: 20px;
 }
-
-/* esto sirvio para posicionar los elementos bajo el chevron */
-/* .submenu  :hover.submenu{
-  display: block;
-} */
-
-.nabvar__link {
-  font-size: var(--font-medium);
-  padding: var(--spacing-8) var(--spacing-16);
+.navbar__icon{
+  color: var(--light-font);
+}
+.navbar__link{
+  color: var(--light-font);
+  font-size: 14px;
+  text-decoration: none;
+  padding: 10px;
   display: inline-block;
   position: relative;
-  /* transition: background .3s ease-in-out;  */
 }
-
-.nabvar__link:hover {
-  background-color: var(--primary-900);
-}
-.with-icon {
+/* .navbar__item:nth-child(4){
+  border: 3px solid black;
+  position: relative;
+} */
+.navbar__link--icon{
   display: flex;
   align-items: center;
-  gap: var(--spacing-8);
+  gap: 5px;
 }
-.with-submenu:hover .submenu {
-  display: block;
+.navbar__link:hover{
+  color: #BCBCBC;
+  /* background-color: #505050; */
+}
+.navbar__link:hover .icon-animation{
+  transform: rotate(90deg);
+  transition: transform .3s;
 }
 
-.submenu {
+.navbar__item-cart{
+  background-color: var(--primary-solid);
+  padding: 5px;
+  border-radius: 4px;
+  position: absolute;
+  top: -15px;
+}
+.submenu{
   display: none;
   position: absolute;
   background-color: var(--dark-bg--solid);
-  width: 300px;
+  font-size: 13px;
+  list-style: none;
+  padding: 0px;
+  z-index: 50;
 }
-.submenu__link {
+.navbar__item--with-submenu:hover .submenu{
   display: block;
-  padding: var(--spacing-8) var(--spacing-16);
-  font-size: var(--font-medium);
 }
+.submenu__link{
+  text-decoration: none;
+  color: var(--light-font);
+  display: block;
+  padding: 8px;
+  margin-right: 50px;
+}
+.submenu__link:hover{
+  color: #BCBCBC;
+}
+
+
 
 .hero {
   background-image: url(../img/multimedia/funkos-banner.webp);
