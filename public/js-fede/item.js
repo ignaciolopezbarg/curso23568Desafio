@@ -23,30 +23,44 @@ const item =
   imgFront: frontImg,
   imgBack: backImg
 };
+let producto = JSON.parse(localStorage.getItem("data")) || { items: "0" };
+if(producto.items){
+  cartElements.textContent = parseInt(producto.items)
+  quantity.value = producto.items
+}else{
+  cartElements.textContent = "0"
+}
+console.log(producto.items)
 // JSON.parse(localStorage.getItem("data")) || []
-add.addEventListener("click", () => {
-  // let elementoSeleccionado = item.nombre
-  // console.log(elementoSeleccionado)
-  quantity.value = Number(quantity.value) + 1
-  console.log("incrementar")
+document.addEventListener("DOMContentLoaded", function () {
+  add.addEventListener("click", () => {
+    // let elementoSeleccionado = item.nombre
+    // console.log(elementoSeleccionado)
+    quantity.value = Number(quantity.value) + 1
+    console.log("incrementar")
+  });
+  
+  subtract.addEventListener("click", () => {
+    if (quantity.value <= 0) {
+      quantity.value = 0;
+    } else {
+      quantity.value = Number(quantity.value) - 1;
+    }
+    console.log("decrementar")
+  });
+  
+  agregarBtn.addEventListener("click", () => {
+    item.items = quantity.value // actualiza el valor total de ese item en localstorage
+    cartElements.textContent = quantity.value // actualiza el valor del total del carrito
+    localStorage.setItem("data",JSON.stringify(item))
+    console.log(item.items)
+    console.log(item)
+  });
+
 });
 
-subtract.addEventListener("click", () => {
-  if (quantity.value <= 0) {
-    quantity.value = 0;
-  } else {
-    quantity.value = Number(quantity.value) - 1;
-  }
-  console.log("decrementar")
-});
 
-agregarBtn.addEventListener("click", () => {
-  item.items = quantity.value // actualiza el valor total de ese item en localstorage
-  cartElements.textContent = quantity.value // actualiza el valor del total del carrito
-  localStorage.setItem("data",JSON.stringify(item))
-  console.log(item.items)
-  console.log(item)
-});
+
 // console.log(frontImg)
 // console.log(backImg)
 // console.log(nombre)
