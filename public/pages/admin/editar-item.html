@@ -1,123 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css-fede/Normalize.css"> <!-- falta esto -->
-    <link rel="stylesheet" href="../../css-fede/editar-item.css">
+    <link rel="stylesheet" href="../css/Normalize.css"> <!-- falta esto -->
+    <link rel="stylesheet" href="../../estilos/editar-item.css">
     <script src="https://kit.fontawesome.com/d82e4588df.js" crossorigin="anonymous"></script>
     <title>Edit</title>
 </head>
+ 
 <body>
-
     <header class="header">
         <nav class="navbar container">
             <div class="navbar__logo">
-                <a href="../../inicio.html" class="navbar__link-banner">
-                    <img src="../../img/multimedia/branding/logo_light_horizontal.svg" alt="logo_FUNKOSHOP" class="navbar__img">
-                </a>
+                <a href="../pages/index.html" class="navbar__link-banner">
+                    <img src="../../img/multimedia/branding/logo_light_horizontal.svg" alt="logo_FUNKOSHOP" class="navbar__img">    </a>
             </div>
-        
+ 
             <ul class="navbar__list">
                 <li class="navbar__item">
-                    <a href="../../inicio.html" class="navbar__link">VER TIENDA</a>
+                    <a href="#" class="navbar__link">VER TIENDA</a>
                 </li>
                 <li class="navbar__item">
-                    <a href="../admin/login.html" class="navbar__link">ADMIN</a>
+                    <a href="../pages/Login.html" class="navbar__link">ADMIN</a>
                 </li>
                 <li class="navbar__item">
-                    <a href="../shop/Carrito.html" class="navbar__link">SALIR</a>
+                    <a href="../pages/Carrito.html" class="navbar__link">SALIR</a>
                     </a>
                 </li>
             </ul>
         </nav>
     </header>
-    <main>
-        <div   div class="new-item">
-              <h1>EDITAR ITEM</h1>
+    <main class="root">
+        <div class="new-item">
+            <h1>EDITAR ITEM</h1>
         </div>
         <section>
-            <div class="item-class">   
-                    <label for="Categoria">Categoria</label>
-                        <select name="Categoria" id="Categoria">
-                            <option value="Figuras">Figuras</option>
-                          </select>
-                    <label for="Licencia">Licencia</label>
-                        <select name="Licencia" id="Licencia">
-                              <option value="Naruto">Naruto Shippuden</option>
-                        </select>
-             </div>
-             <div class="item-name">
-                    <label for="nameProduct" class="prodName">Nombre del producto</label>
-                    <input type="text"class="input-line">
-                    <br>
-                    <!--TODO:ARREGLAR ESTO, NO LOGRO QUE QUEDE GRANDE LA DESCRIPCION, Y SI QUEDA GRANDE SE ROMPEN LOS ESTILOS-->
-                    <input type="text" placeholder="Descripcion del producto" class="descr">
-                </div>
+            <div class="item-class">
+                <label for="Categoria">Categoria</label>
+                <select name="Categoria" id="Categoria">
+                    <option value="Figuras">Figuras</option>
+                </select>
+                <label for="Licencia">Licencia</label>
+                <select name="Licencia" id="Licencia">
+                    <option value="Naruto">Naruto Shippuden</option>
+                </select>
+            </div>
+            <div class="item-name">
+                <label for="nameProduct" class="prodName">Nombre del producto</label>
+                <input type="text" class="input-line">
+                <br>
+                <!--TODO:ARREGLAR ESTO, NO LOGRO QUE QUEDE GRANDE LA DESCRIPCION, Y SI QUEDA GRANDE SE ROMPEN LOS ESTILOS-->
+                <textarea placeholder="Descripcion del producto" class="descr"></textarea>
+            </div>
         </section>
         <section>
-            
-                <div class="item-category">
-                    <label for="SKU" >SKU:</label>
-                    <input type="text" class="input-line">
-                    <label for="Precio">Precio:</label>
-                    <input type="text"class="input-line">
-                    <label for="stock">Stock:</label>
-                    <input type="text"class="input-line">
-                </div>
-                <br>
-                <div class="item-price">
-                    <label for="Descuento">Descuento:</label>
-                    <input type="text"class="input-line">
-                    <label for="Cuotas">Cuotas</label>
-                    <select name="Cuotas" id="Cuotas">
-                        <option value="cuotas6">3 Cuotas sín interés</option>
-                        <option value="cuotas3">6 Cuotas sín interés</option>
-                        <option value="cuotas12">12 Cuotas sín interés</option>
-                </div>
+ 
+            <div class="item-category">
+                <label for="SKU">SKU:</label>
+                <input type="text" class="input-line">
+                <label for="Precio">Precio:</label>
+                <input type="text" class="input-line">
+                <label for="stock">Stock:</label>
+                <input type="text" class="input-line">
+            </div>
+            <br>
+            <div class="item-price">
+                <label for="Descuento">Descuento:</label>
+                <input type="text" class="input-line">
+                <label for="Cuotas">Cuotas</label>
+                <select name="Cuotas" id="Cuotas">
+                    <option value="cuotas6">3 Cuotas sín interés</option>
+                    <option value="cuotas3">6 Cuotas sín interés</option>
+                    <option value="cuotas12">12 Cuotas sín interés</option>
+            </div>
         </section>
         <button class="btn-modificar">Modificar Producto</button>.
-
+ 
         <section>
             <div class="item-img">
                 <label for="formFileMultiple" class="form-label">Multiple files input example</label>
-                <input class="form-control" type="file" id="formFileMultiple" onchange="getImagePreview(event)">
-                <div id="preview"></div>
+                <input class="form-control" type="file" accept="image/*" id="formFileMultiple" onchange="getImagePreview(event)" />
+                <div>
+                    <div id="preview"></div>
+                </div>
+                <div class="btn-mod">
+                    <button type="submit" class="btn-modificar">Modificar producto</button>
+                </div>
+            </div>
         </section>
-<br>
-        <div class="btn-mod" >
-            <button type="submit" class="btn-modificar">Modificar producto</button>
-        </div>
     </main>
-
+ 
     <footer class="footer">
         <div class="footer__container container">
             <nav class="footer__navbar navbar">
                 <ul class="footer__list navbar__list">
                     <li class="footer__item">
-                        <a href="../shop/shop.html" class="footer__link navbar__link"> SHOP</a>
+                        <a href="Shop.html" class="footer__link navbar__link"> SHOP</a>
                     </li>
                     <li class="footer__item">
-                        <a href="../admin/login.html" class="footer__link navbar__link">INGRESAR</a>
+                        <a href="./Login.html" class="footer__link navbar__link">INGRESAR</a>
                     </li>
                     <li class="footer__item">
-                        <a href="../shop/contacto.html" class="footer__link navbar__link">CONTACTO</a>
+                        <a href="./Contact.html" class="footer__link navbar__link"">CONTACTO</a>
                     </li>
                 </ul>
             </nav>
-            <div class="footer__rights">
-                <p class="footer__text">All rights reserved 2023 - Funkoshop &copy;</p>
-            </div>
-            <div class="footer__logo ">
-                <img src="../../img/multimedia/branding/isotype.svg" alt="logo_FUNKOSHOP" class="footer__img">
-            </div>
+            <div class=" footer__rights">
+                            <p class="footer__text">All rights reserved 2023 - Funkoshop &copy;</p>
         </div>
-    </footer>    
+        <div class="footer__logo ">
+            <img src="../../img/multimedia/branding/logo_light_horizontal.svg" alt="logo_FUNKOSHOP" class="footer__img">
+        </div>
+        </div>
+    </footer>
+ 
     <script src="https://kit.fontawesome.com/d82e4588df.js" crossorigin="anonymous"></script>
-    <script src="../../js-fede/edit.js"></script>
-
-
-
-    
+    <script src="../../js/edit-item.js"></script>
 </body>
+ 
 </html>
