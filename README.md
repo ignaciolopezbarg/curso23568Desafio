@@ -4,5 +4,7 @@ Grupo 7
 Integrantes:
 Alan de Pedro
 Federico Melgin
-Santi
+Santiago Rojas
 Ignacio Lopez Barg
+
+
