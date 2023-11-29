@@ -159,6 +159,12 @@ img{
 .cart__item{
     margin-top: 20px;
 }
+.cart__item-empty-text{
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-base);
+    font-weight: bold;
+}
 
 .container-shadow{
     border-radius: 10px;
@@ -471,6 +477,7 @@ img{
         justify-content: center;
         position: relative;
     }
+
     .cart__product{
         flex-direction: column;
         display: flex;
