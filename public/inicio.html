@@ -73,7 +73,7 @@
     </section>
 
     <!-- seccion de las tres colecciones -->
-    <main class="main-container">
+    <main class="main container">
       <section class="collection container">
         <article class="collection__content">
           <h3 class="collection__title">STARS WARS & THE MANDOLARIAN</h3>
@@ -222,29 +222,28 @@
     </main>
 
     <footer class="footer">
-      <nav class="nabvar container">
-        <ul class="nabvar__item">
-          <li class="nabvar__items">
-            <a class="nabvar__link" href="../public/pages/shop/shop.html">SHOP</a>
-          </li>
-          <li class="nabvar__items">
-            <a class="nabvar__link" href="../public/pages/admin/register.html">REGISTRARSE</a>
-          </li>
-
-          <li class="nabvar__items">
-            <a class="nabvar__link" href="../public/pages/shop/contacto.html">CONTACTO</a>
-          </li>
-        </ul>
-        <picture>
-          <img
-            src="./img/multimedia/branding/isotype.svg"
-            alt="Isotipo logo tienda Funkoshop"
-          />
-        </picture>
-      </nav>
-      <p class="footer__copy">All rights reserved 2023- Funkoshop&COPY;</p>
-      <p class="footer__copy">Curso Codo a Codo- Comision 23051</p>
-    </footer>
+      <div class="footer__container container">
+          <nav class="footer__navbar navbar">
+              <ul class="footer__list navbar__list">
+                  <li class="footer__item">
+                      <a href="../shop/shop.html" class="footer__link navbar__link"> SHOP</a>
+                  </li>
+                  <li class="footer__item">
+                      <a href="../admin/login.html" class="footer__link navbar__link">INGRESAR</a>
+                  </li>
+                  <li class="footer__item">
+                      <a href="../shop/contacto.html" class="footer__link navbar__link"">CONTACTO</a>
+                  </li>
+              </ul>
+          </nav>
+          <div class="footer__rights">
+              <p class="footer__text">All rights reserved 2023 - Funkoshop &copy;</p>
+          </div>
+          <div class="footer__logo ">
+              <img src="../public/img/multimedia/branding/isotype.svg" alt="logo_FUNKOSHOP" class="footer__img">
+          </div>
+      </div>
+  </footer>
     <!-- Este script es para iconnify, donde bajaremos los chevrones del header -->
     <script src="https://kit.fontawesome.com/d82e4588df.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>

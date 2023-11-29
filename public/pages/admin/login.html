@@ -11,6 +11,7 @@
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
     crossorigin="anonymous"
   />
+    <link rel="stylesheet" href="/public/css-fede/Normalize.css">
     <link rel="stylesheet" href="../../estilos/login.css">
     <!-- <link rel="stylesheet" href="../css/bootstrap.min.css"> -->
 
@@ -18,54 +19,91 @@
 </head>
 <body>
        <!-- header -->
-       <header >
-        <!-- inicio de navbar -->
-        <nav class="nabvar container2">
-            <!-- a la clase le agregamos container porque definimos que container no supere el ancho de 1200PX -->
-            <!-- usamos la terminologia BEM,block element modifier, a los hijos le damos el nombre del padre modificado -->
-            <picture class="nabvar__logo">
-                <a href="../../inicio.html">
-                    <img src="../../img/multimedia/branding/logo_light_horizontal.svg"
-                        alt="isologotipo de la marca Funkoshop" />
+       <header class="header">
+        <nav class="navbar container">
+            <div class="navbar__logo">
+                <a href="../../inicio.html" class="navbar__link-banner">
+                    <img src="../../img/multimedia/branding/logo_light_horizontal.svg" alt="logo_FUNKOSHOP" class="navbar__img">
                 </a>
-            </picture>
-            <ul class="nabvar__menu">
-                <li class="nabvar__item with-submenu">
-                    <!-- le agregamos la clase with submenu para que funcione el desplegable -->
-                    <a class="nabvar__link with-icon" href="../../inicio.html">VER TIENDA</a>
-                    <!-- El chevron lo bajamos de la libreria iconify, y agregamos el script para que funcione -->
-                    <!-- agregamos la clase with-icon que nos sirve de ayuda para posicionar lo que tiene el enlace -->
-                   
+            </div>
+        
+            <ul class="navbar__list">
+                <li class="navbar__item navbar__item--with-submenu">
+                    <a href="#" class="navbar__link navbar__link--icon">SHOP<i class="fa-solid fa-angle-right icon-animation " class="navbar__icon"></i></a>
+                    <ul class="submenu">
+                        <li class="submenu__item">
+                            <a href="#" class="submenu__link">FUNKOS</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="#" class="submenu__link">LLAVEROS</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="#" class="submenu__link">REMERAS</a>
+                        </li>
+                    </ul>
                 </li>
-
-                <li class="nabvar__item">
-                    <a class="nabvar__link" href="../shop/contacto.html">ADMIN</a>
+                <li class="navbar__item">
+                    <a href="contacto.html" class="navbar__link">CONTACTO</a>
                 </li>
-                <li class="nabvar__item">
-                    <a class="nabvar__link" href="./login.html">SALIR</a>
-                </li>
-                <li class="nabvar__item">
-                    <a class="nabvar__cart" href="../../pages/shop/carrito.html"><img src="../../img/multimedia/icons/cart-icon.svg"
-                            alt="logo del carrito" /></a>
+                <li class="navbar__item">
+                    <a href="../admin/login.html" class="navbar__link">LOGIN</a>
                 </li>
             </ul>
         </nav>
     </header>
     <!-- formulario -->
-    <div class="formulario">
-        <h2>Registro</h2>
-        <form name="myForm" action="/submit_form" onsubmit="return validateForm()" method="post">
-            <label for="fname">Nombre:</label><br>
-            <input type="text" id="fname" name="fname" required><br>
-            <label for="email">Correo electrónico:</label><br>
-            <input type="email" id="email" name="email" required><br>
-            <label for="psw">Contraseña:</label><br>
-            <input type="password" id="psw" name="psw" required><br>
-            <label for="psw-repeat">Repetir contraseña:</label><br>
-            <input type="password" id="psw-repeat" name="psw-repeat" required><br>
-            <input type="submit" value="Crear cuenta">
-        </form>
-    </div>
+    <main class="main">
+
+        <div class="formulario">
+    
+            <h1 class="formulario__title">CREA TU CUENTA</h1>
+    
+            <span class="formulario__description">completa el formulario para ser parte del mundo de los funkos
+            </span>
+    
+            <form name="myForm" action="/submit_form" onsubmit="return validateForm()" method="post" class="formulario__container container-shadow">
+    
+                <div>
+                    <label class="formulario__item-text" for="name">Nombre:</label>
+                    <input class="formulario__item" type="text" id="name" name="name" required placeholder="Nombre">
+                </div>
+                <div>
+                    <label class="formulario__item-text" for="apellido">Apellido:</label>
+                    <input class="formulario__item" type="text" id="apellido" name="fname" required placeholder="Apellido">
+                </div>
+    
+                <div>
+                    <label class="formulario__item-text" for="email">Email:</label>
+                    <input class="formulario__item" type="email" id="email" name="email" required placeholder="nombre@gmail.com">
+                </div>
+                <div>
+                    <label class="formulario__item-text" for="psw">Contraseña:</label>
+                    <input class="formulario__item" type="password" id="psw" name="psw" required placeholder="********">
+                </div>
+    
+                <div>
+                    <label class="formulario__item-text" for="psw-repeat">Repita contraseña:</label>
+                    <input class="formulario__item" type="password" id="psw-repeat" name="psw-repeat" required placeholder="********">
+                </div>
+                <div class="formulario__btn-container">
+
+                    <input class="formulario__btn " type="submit" value="Crear">
+
+                    <div class="formulario__condiciones-container">
+
+                        <input type="checkbox" class="formulario__btn-check">
+
+                        <p class="formulario__condiciones-text">Acepto</p>
+
+                        <p class="formulario__condiciones-text formulario__condiciones-text-blue">Términos y Condiciones</p>
+
+                    </div>
+                </div>
+    
+            </form>
+    
+        </div>
+    </main>
     <!-- footer -->
     <footer class="pie-pagina">
         <div class="contacto">Contacto</div>
