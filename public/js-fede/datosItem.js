@@ -9,11 +9,18 @@ const frontImg = imagenFrontal.getAttribute("src")
 const backImg = imagenFrontal.getAttribute("src")
 
 const item =
-{
-  items: cartElements,
-  nombre: nombre, 
-  categoria: categoria, 
-  precio: precio,
-  imgFront: frontImg,
-  imgBack: backImg
-};
+[
+  {
+    nombre: "nombre"
+  }
+]
+
+// const item =
+// {
+//   items: cartElements,
+//   nombre: nombre, 
+//   categoria: categoria, 
+//   precio: precio,
+//   imgFront: frontImg,
+//   imgBack: backImg
+// };

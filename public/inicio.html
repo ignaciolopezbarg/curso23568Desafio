@@ -24,53 +24,42 @@
   <body>
     <!-- header -->
     <header>
-      <nav class="nabvar container">
-        <!-- a la clase le agregamos container porque definimos que container no supere el ancho de 1200PX -->
-        <!-- usamos la terminologia BEM,block element modifier, a los hijos le damos el nombre del padre modificado -->
-        <picture class="nabvar__logo">
-          <a href="../public/pages/shop/shop.html">
-            <img
-              src="./img/multimedia/branding/logo_light_horizontal.svg"
-              alt="isologotipo de la marca Funkoshop"
-            />
-          </a>
-        </picture>
-        <ul class="nabvar__menu">
-          <li class="nabvar__item with-submenu">
-            <!-- le agregamos la clase with submenu para que funcione el desplegable -->
-            <a class="nabvar__link with-icon" href=""
-              >SHOP <iconify-icon icon="bi:chevron-down"></iconify-icon
-            ></a>
-            <!-- El chevron lo bajamos de la libreria iconify, y agregamos el script para que funcione -->
-            <!-- agregamos la clase with-icon que nos sirve de ayuda para posicionar lo que tiene el enlace -->
-            <ul class="submenu">
-              <li class="submenu__item">
-                <a class="submenu__link" href="">FUNKOS</a>
-              </li>
-              <li class="submenu__item">
-                <a class="submenu__link" href="">REMERAS</a>
-              </li>
-              <li class="submenu__item">
-                <a class="submenu__link" href="">LLAVEROS</a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="nabvar__item">
-            <a class="nabvar__link" href="../public/pages/shop/contacto.html">CONTACTO</a>
-          </li>
-          <li class="nabvar__item">
-            <a class="nabvar__link" href="../public/pages/admin/login.html">LOGIN</a>
-          </li>
-          <li class="nabvar__item">
-            <a class="nabvar__cart" href="../public/pages/shop/carrito.html"
-              ><img
-                src="./img/multimedia/icons/cart-icon.svg"
-                alt="logo del carrito"
-            /></a>
-          </li>
+      <nav class="navbar container">
+        <div class="navbar__logo">
+            <a href="../../inicio.html" class="navbar__link-banner">
+                <img src="/public/img/multimedia/branding/logo_light_horizontal.svg" alt="logo_FUNKOSHOP" class="navbar__img">
+            </a>
+        </div>
+    
+        <ul class="navbar__list">
+            <li class="navbar__item navbar__item--with-submenu">
+                <a href="#" class="navbar__link navbar__link--icon">SHOP<i class="fa-solid fa-angle-right icon-animation " class="navbar__icon"></i></a>
+                <ul class="submenu">
+                    <li class="submenu__item">
+                        <a href="../pages/index.html" class="submenu__link">FUNKOS</a>
+                    </li>
+                    <li class="submenu__item">
+                        <a href="#" class="submenu__link">LLAVEROS</a>
+                    </li>
+                    <li class="submenu__item">
+                        <a href="#" class="submenu__link">REMERAS</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="navbar__item">
+                <a href="#" class="navbar__link">CONTACTO</a>
+            </li>
+            <li class="navbar__item">
+                <a href="../pages/Login.html" class="navbar__link">LOGIN</a>
+            </li>
+            <li class="navbar__item">
+                <a href="../pages/Carrito.html" class="navbar__link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="navbar__item-cart">0</span>
+                </a>
+            </li>
         </ul>
-      </nav>
+    </nav>
     </header>
 
     <!-- seccion correspondiente al banner -->
@@ -222,7 +211,7 @@
         </div>
         <!-- Pegamos de la libreria de glide en el set-up el siguiente div para los botones del slider -->
         <div data-glide-el="controls">
-          <button class="glide__arrow glide__arrow--left" data-glide-dir=">">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
             <iconify-icon icon="tabler:chevron-left"></iconify-icon>
           </button>
           <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
@@ -257,6 +246,7 @@
       <p class="footer__copy">Curso Codo a Codo- Comision 23051</p>
     </footer>
     <!-- Este script es para iconnify, donde bajaremos los chevrones del header -->
+    <script src="https://kit.fontawesome.com/d82e4588df.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
     <!-- Este script es para la libreria glidejs, para el carussell -->
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
