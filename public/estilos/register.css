@@ -129,29 +129,6 @@ header {
     background-color: red;
 }
 
-.with-icon {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-8);
-}
-
-.with-submenu:hover .submenu {
-    display: block;
-
-}
-
-.submenu {
-    display: none;
-    position: absolute;
-    background-color: var(--dark-bg--solid);
-    width: 300px;
-}
-
-.submenu__link {
-    display: block;
-    padding: var(--spacing-8) var(--spacing-16);
-    font-size: var(--font-medium);
-}
 
 .navbar a:hover {
     color: #f340cc;

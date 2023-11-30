@@ -48,7 +48,7 @@ fieldset {
 
 .form__group--order {
     color: #B9B9B9;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
     width: 243.034px;
     height: 44.285px;
@@ -62,7 +62,7 @@ fieldset {
 
 .form__group--limit {
     color: #B9B9B9;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
     border-radius: 6px;
     border: 2px solid #30343F;
@@ -81,4 +81,7 @@ fieldset {
     height: 20px;
     flex-shrink: 0;
     margin-right: 5px;
+}
+.form__group--search{
+    font-size: small
 }

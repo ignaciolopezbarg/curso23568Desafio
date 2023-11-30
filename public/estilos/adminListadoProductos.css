@@ -94,36 +94,6 @@ img{
     color: #BCBCBC;
     /* background-color: #505050; */
 }
-.navbar__link:hover .icon-animation{
-    transform: rotate(90deg);
-    transition: transform .3s;
-    /* background-color: #505050; */
-}
-
-
-.submenu{
-    display: none;
-    position: absolute;
-    background-color: var(--color-dark-bg);
-    font-size: 13px;
-    list-style: none;
-    padding: 0px;
-    z-index: 50;
-}
-.navbar__item--with-submenu:hover .submenu{
-    display: block;
-}
-.submenu__link{
-    text-decoration: none;
-    color: var(--light-font);
-    display: block;
-    padding: 8px;
-    margin-right: 50px;
-}
-.submenu__link:hover{
-    color: #BCBCBC;
-}
-
 
 
 /* 
