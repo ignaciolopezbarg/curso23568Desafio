@@ -485,24 +485,31 @@ header {
 }*/
 .footer{
   background-color: var(  --dark-bg--solid);
+  border-radius: 25px;
 }
 .footer__container{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 240px;
+  height: auto;
 }
 .footer__list{
   display: block;
-  padding: 15px;
+  padding: var(--spacing-12);
+  
 }
 .footer__item{
   list-style: none;
+  
 }
 .footer__rights{
-  padding: 6px;
-  align-self: flex-end;
+  padding: var(--spacing-16);
+
 }
 .footer__text{
   color: var(--light-font);
+  padding-bottom: var(--spacing-12);
+  align-items: center;
+  font-size: var(--font-small);
 }
+
