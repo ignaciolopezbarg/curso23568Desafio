@@ -486,6 +486,7 @@ header {
 .footer{
   background-color: var(  --dark-bg--solid);
   border-radius: 25px;
+  height: auto;
 }
 .footer__container{
   display: flex;
