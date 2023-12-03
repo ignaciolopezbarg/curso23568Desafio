@@ -1,10 +1,17 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-router.get('shop',(req,res)=>res.send('Route for Shop View'));
-router.get('shop/item/:id',(req,res)=>res.send('Route for find and retrieve a product from an Id'));
-router.post('shop/item/:id/add',(req,res)=>res.send('Route for add the current item to the shop Cart'));
-router.get('shop/cart',(req,res)=>res.send('Route for Cart View'));
-router.post('shop/cart',(req,res)=>res.send('Route for checkout page'));
+const shopControllers = require("../controllers/shop.controller.js");
+//las rutas todas empiezan con shop, entonces, para no escribir tanto, en el middleware del app.js, agrego el shop ahi
+
+router.get("/", shopControllers.home);
+router.get("/item/:id", (req, res) =>
+  res.send(`route for find and retrieve an item from an ID ${req.params.id} `)
+),
+  router.post("/item/:id/add", (req, res) =>
+    res.send("devuelve item a adicionar")
+  );
+router.get("/cart", shopControllers.cart);
+router.post("/cart", shopControllers.cart);
 
 module.exports = router;

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+//importe el metodo Router, que me permite separar en distintas rutas
 
 const mainControllers = require('../controllers/main.controller.js')
 
