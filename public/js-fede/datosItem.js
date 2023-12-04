@@ -8,19 +8,13 @@ const imagenTrasera = document.querySelector(".item__card-back")
 const frontImg = imagenFrontal.getAttribute("src")
 const backImg = imagenFrontal.getAttribute("src")
 
-const item =
-[
-  {
-    nombre: "nombre"
-  }
-]
 
-// const item =
-// {
-//   items: cartElements,
-//   nombre: nombre, 
-//   categoria: categoria, 
-//   precio: precio,
-//   imgFront: frontImg,
-//   imgBack: backImg
-// };
+const item =
+{
+  items: cartElements,
+  nombre: nombre, 
+  categoria: categoria, 
+  precio: precio,
+  imgFront: frontImg,
+  imgBack: backImg
+};
