@@ -1,13 +1,12 @@
-const express = require('express');
+const express = require("express");
 
 const app = express();
 
-const mainRoutes = require('./src/routes/main.routes.js');
-const shopRoutes = require('./src/routes/shop.routes.js');
-const authRoutes = require('./src/routes/auth.routes.js');
+const mainRoutes = require("./src/routes/main.routes.js");
+const shopRoutes = require("./src/routes/shop.routes.js");
+const authRoutes = require("./src/routes/auth.routes.js");
 
-app.use(express.static('public'));
-
+app.use(express.static("public"));
 
 //las rutas siguientes no se usan en el proyecto, son solo para ir probando el servidor
 //app.get('/home', (req,res) => res.sendFile(__dirname + 'public/inicio.html'));
@@ -15,28 +14,18 @@ app.use(express.static('public'));
 
 //si colocamos app. se nos despliegan todos los metodos disponibles para la app, que nos provee express
 
-
-//const adminRoutes = require('./src/routes/admin.routes.js');
-//const authRoutes = require('./src/routes/auth.routes.js');
-
-
 // Importa los controladores:
 //const mainControllers = require('./src/controllers/main.controller.js');
-
-// Agrega este middleware para los archivos estáticos, públicos:
-
-
 // Agrega los middlewares para parsear el cuerpo de las solicitudes:
-//app.use(express.json());
-//app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Agrega los middlewares para las distintas rutas:
- app.use('/', mainRoutes);
- app.use('/shop', shopRoutes);
+app.use("/", mainRoutes);
+app.use("/shop", shopRoutes);
 //app.use('/auth', authRoutes);
 
-
-const PORT = 3003;
+const PORT = 3004;
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
 
