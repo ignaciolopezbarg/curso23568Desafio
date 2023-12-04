@@ -25,7 +25,7 @@ app.use("/", mainRoutes);
 app.use("/shop", shopRoutes);
 //app.use('/auth', authRoutes);
 
-const PORT = 3004;
+const PORT = process.env.DBPORT || 3305;
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
 
