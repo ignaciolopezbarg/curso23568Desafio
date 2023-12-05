@@ -207,16 +207,16 @@ function generarShop(){
         <div class="catalogue__product">
             <article class="card-item">
                 <a class="card-item__link" href="./item.html">
-                <picture class="card-item__cover">
-                <span class="card-item__tag">Nuevo</span>
-                    <img class="card-item__img--front" src="/public/img/multimedia/${producto.product_image_front}" alt=${producto.product_description}>
-                    <img class="card-item__img--back" src="/public/img/multimedia/${producto.product_image_back}" alt=${producto.product_description}>
+                    <picture class="card-item__cover">
+                        <span class="card-item__tag">Nuevo</span>
+                        <img class="card-item__img--front" src="/public/img/multimedia/${producto.product_image_front}" alt="${producto.product_description}">
+                        <img class="card-item__img--back" src="/public/img/multimedia/${producto.product_image_back}" alt="${producto.product_description}">
                     </picture>
-                <div class="card-item__content">
-                    <p class="card-item__licence">${producto.categoria}</p>
-                    <h4 class="card-item__name">${producto.product_name}</h4>
-                    <p class="card-item__price">$ ${producto.product_price}</p>
-                    <p class="card-item__promo">3 CUOTAS SIN INTERÉS</p>
+                    <div class="card-item__content">
+                        <p class="card-item__licence">${producto.categoria}</p>
+                        <p class="card-item__name">${producto.product_name}</p>
+                        <p class="card-item__price">$ ${producto.product_price}</p>
+                        <p class="card-item__promo">3 CUOTAS SIN INTERÉS</p>
                     </div>
                 </a>
             </article>
@@ -225,20 +225,44 @@ function generarShop(){
     }).join(""));
 
 }
-
 generarShop();
 
+const nombres = document.querySelectorAll(".card-item__name");
+const categorias = document.querySelectorAll(".card-item__licence");
+const precios = document.querySelectorAll(".card-item__price");
+const imagenFronts = document.querySelectorAll(".card-item__img--front");
+const imagenBacks = document.querySelectorAll(".card-item__img--back");
+
+
+console.log(imagenFronts)
+console.log(imagenBacks)
+
+const producto = 
+{
+  nombre: "",
+  categoria: "", 
+  precio: "",
+  descripcion: "",
+  imgFront: "",
+  imgBack: ""
+};
+
 const productoSeleccionado = document.querySelectorAll(".card-item__link");
-// const producto = 
-// {
-//   items: cartElements.textContent,
-//   nombre: nombre,
-//   categoria: categoria, 
-//   precio: precio,
-//   imgFront: frontImg,
-//   imgBack: backImg
-// };
-console.log(productoSeleccionado)
+productoSeleccionado.forEach((productoSeleccionado,i) => {
+
+    productoSeleccionado.addEventListener("click", () => {
+        
+        producto["nombre"] = nombres[i].textContent
+        producto["categoria"] = categorias[i].textContent
+        producto["precio"] = precios[i].textContent
+        producto["descripcion"] = imagenBacks[i].getAttribute("alt")
+        producto["imgFront"] = imagenFronts[i].getAttribute("src")
+        producto["imgBack"] = imagenBacks[i].getAttribute("src")
+        localStorage.setItem("selectProduct",JSON.stringify(producto))
+        console.log(producto["descripcion"])
+    })
+});
+
 
 
 

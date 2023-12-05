@@ -10,7 +10,7 @@ const $precioElement = document.querySelector(".item__info--price")
 const precio = parseFloat($precioElement.textContent.replace(/[^\d,.]/g, '')); 
 const imagenFrontal = document.querySelector(".item__card-front") 
 const imagenTrasera = document.querySelector(".item__card-back") 
-
+console.log(nombre)
 const frontImg = imagenFrontal.getAttribute("src")
 const backImg = imagenFrontal.getAttribute("src")
 
@@ -60,9 +60,3 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-// console.log(frontImg)
-// console.log(backImg)
-// console.log(nombre)
-// console.log(categoria)
-// console.log(precio)

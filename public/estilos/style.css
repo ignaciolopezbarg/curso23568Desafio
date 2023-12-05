@@ -383,9 +383,11 @@ header {
 /*footer*/
 .item {
   display: flex;
-  flex-direction: row;
   padding: var(--spacing-48);
+  margin: 5px;
+  /* border: 1px solid red; */
 }
+
 .item__card {
   display: flex;
   flex-direction: column;
@@ -393,7 +395,7 @@ header {
   height: 400px;
   position: relative;
   overflow: hidden;
-  padding: var(--spacing-24);
+  /* border: 3px solid green; */
 }
 .item__card-front,
 .item__card-back {
@@ -419,32 +421,44 @@ header {
 
 .item__info {
   padding: var(--spacing-24);
+  /* border: 1px solid blue; */
 }
 .item__info--license {
+  /* border: 1px solid blue; */
   font-size: var(--font-jumbo);
   color: var(--dark-solid);
-  font-weight: 700;
+  font-size: medium;
+  padding: 2px;
+  font-weight: 300;
 }
 .item__info--name {
+  /* border: 1px solid blue; */
   font-size: var(--font-large);
   color: var(--dark-solid);
-  font-weight: 700;
+  font-weight: bolder;
+  padding: 2px;
 }
 .item__info--description {
+  /* border: 1px solid blue; */
   font-size: var(--font-medium);
   color: var(--dark-solid);
+  padding: 2px;
   /* padding: var(--spacing-20) var(--spacing-12); */
 }
 .item__info--price {
+  /* border: 1px solid blue; */
   font-size: var(--font-medium);
   color: var(--dark-solid);
   font-weight: 500;
-  padding: var(--spacing-24) var(--spacing-12);
+  font-size: xx-large;
+  padding: 2px;
 }
 .item__cart {
+  /* border: 1px solid blue; */
   display: flex;
   flex-direction: row;
-  padding: var(--spacing-16);
+  justify-content: flex-start;
+  padding: var(--spacing-12);
   gap: var(--spacing-20);
 }
 .item__quantity {
