@@ -10,7 +10,6 @@ const $precioElement = document.querySelector(".item__info--price")
 const precio = parseFloat($precioElement.textContent.replace(/[^\d,.]/g, '')); 
 const imagenFrontal = document.querySelector(".item__card-front") 
 const imagenTrasera = document.querySelector(".item__card-back") 
-console.log(nombre)
 const frontImg = imagenFrontal.getAttribute("src")
 const backImg = imagenFrontal.getAttribute("src")
 
@@ -23,15 +22,16 @@ const item =
   imgFront: frontImg,
   imgBack: backImg
 };
+
 let producto = JSON.parse(localStorage.getItem("data")) || { items: "0" };
+
 if(producto.items){
   cartElements.textContent = parseInt(producto.items)
   quantity.value = producto.items
 }else{
   cartElements.textContent = "0"
 }
-console.log(producto.items)
-// JSON.parse(localStorage.getItem("data")) || []
+
 document.addEventListener("DOMContentLoaded", function () {
   add.addEventListener("click", () => {
     // let elementoSeleccionado = item.nombre

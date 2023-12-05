@@ -65,10 +65,9 @@
         <!-- En la docu de la libreria nos pide agregar un nuevo div con la clase que se indica -->
         <div class="glide__track" data-glide-el="track">
           <ul class="slider__items glide__slides">
-            <li class="slider__item glide__slide">
+            <!-- <li class="slider__item glide__slide">
               <article class="card-item">
-                <!-- a este ultimo no seguimos con Bem, pues es una especie de tarjeta que se repite en las distintas paginas -->
-                <a class="card-item__link" href="">
+                <a class="card-item__link" href="./item.html">
                   <picture class="card-item__cover">
                     <span class="card-item__tag">NUEVO</span>
                     <img
@@ -94,7 +93,7 @@
 
             <li class="slider__item glide__slide">
               <article class="card-item">
-                <a class="card-item__link" href="">
+                <a class="card-item__link" href="./item.html">
                   <picture class="card-item__cover">
                     <span class="card-item__tag">NUEVO</span>
                     <img
@@ -120,7 +119,7 @@
 
             <li class="slider__item glide__slide">
               <article class="card-item">
-                <a class="card-item__link" href="">
+                <a class="card-item__link" href="./item.html">
                   <picture class="card-item__cover">
                     <span class="card-item__tag">NUEVO</span>
                     <img
@@ -142,7 +141,7 @@
                   </div>
                 </a>
               </article>
-            </li>
+            </li> -->
           </ul>
         </div>
         <!-- Pegamos de la libreria de glide en el set-up el siguiente div para los botones del slider -->
@@ -179,12 +178,14 @@
           </div>
       </div>
   </footer>
+  <script src="https://kit.fontawesome.com/d82e4588df.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
     <script src="../../js-fede/item-generator.js"></script>
-    <script src="https://kit.fontawesome.com/d82e4588df.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
+    <script src="../../js-fede/productsData.js"></script>
     <script src="../../js-fede/item.js"></script>
     <!-- hay que agregar este nuevo script para que funcione glide: -->
+    <script src="/public/js-fede/item-glide-functions.js"></script>
     <script src="/public/js-fede/glide.js"></script>
   </body>
 </html>
