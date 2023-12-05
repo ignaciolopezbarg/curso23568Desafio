@@ -23,7 +23,7 @@ if(item.items){
         <p class="cart__product-text">${item.categoria}</p>
         <div class="cart__product-container-price" >
             <p class="cart__product-price-text">precio: $</p>
-            <p class="cart__product-price">${item.precio}</p>
+            <p class="cart__product-price">${parseFloat(item.precio).toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
             </div>
             </div>
     

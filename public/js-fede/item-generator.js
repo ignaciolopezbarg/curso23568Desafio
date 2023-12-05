@@ -1,9 +1,8 @@
+// guardo el objeto que se guardo en localStorage
 const product = JSON.parse(localStorage.getItem("selectProduct")) || []
-
 const itemContainer = document.querySelector(".item")
 
-console.log(itemContainer)
-
+// genera el codigo html del item
 function itemGenerator(){
     return itemContainer.innerHTML = `
     <picture class="item__card">

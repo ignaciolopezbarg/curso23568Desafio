@@ -185,7 +185,7 @@ const productos =
         product_id: "13",
         categoria: "HARRY POTTER",
         product_name: "SNAPE PATRONUS",
-        product_description: "Figura coleccionable de Luna Lovegood - Harry Potter Saga.",
+        product_description: "Figura coleccionable de Snape Patronus - Harry Potter Saga.",
         product_price: "1799.99",
         product_stock: 13,
         product_discount: 10,
