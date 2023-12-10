@@ -1,14 +1,21 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 //const upLoadFiles = require('../middlewares/upLoadFiles');
-const controllers = require ('../controllers/admin.controller.js');
+const {
+  admin,
+  createView,
+  createItem,
+  editView,
+  editItem,
+  deleteItem,
+} = require("../controllers/admin.controller.js");
 
-// router.get('/',controllers.adminView);
-// router.get('/create',controllers.createView);
-// router.post ('/create',controllers.createItem);
-// router.post('/create',controllers.Create);
-// router.get('/edit/:id',controllers.editView);
-// router.get('/edit/:id',controllers.editItem);
-router.delete('/delete/:id',controllers.deleteItem);
+ router.get('/',admin);
+ router.get('/create',createView);
+ router.post ('/create',createItem);
+ router.get('/edit/:id',editView);
+ router.get('/edit/:id',editItem);
+ router.put('/edit/:id',editItem);
+router.delete("/delete/:id",deleteItem);
 
 module.exports = router;

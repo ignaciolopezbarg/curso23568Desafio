@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 //importe el metodo Router, que me permite separar en distintas rutas
 
-const mainControllers = require('../controllers/main.controller.js')
+const {home,contact,about,faqs} = require('../controllers/main.controller.js')
 
-router.get('/home',mainControllers.home);
-router.get('/contact',mainControllers.contact);
-router.get('/about',mainControllers.about);
-router.get('/faqs',mainControllers.faqs);
+router.get('/home',home);
+router.get('/contact',contact);
+router.get('/about',about);
+router.get('/faqs',faqs);
 
 
 

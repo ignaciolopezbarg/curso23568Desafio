@@ -12,15 +12,15 @@
     />
     <!-- Estos dos enlaces son para poder trabajar ocn glidejs, sin usar express, para poder hacer el carussell, los pasamos al css y vienen con import -->
 
-    <link rel="stylesheet" href="/public/estilos/style.css" />
+    <link rel="stylesheet" href="/estilos/style.css" />
   </head>
   <body>
     <!-- header -->
     <header>
       <nav class="navbar container">
         <div class="navbar__logo">
-            <a href="../pages/index.html" class="navbar__link-banner">
-                <img src="/public/img/multimedia/branding/logo_light_horizontal.svg" alt="logo_FUNKOSHOP" class="navbar__img">
+            <a href="../inicio.ejs" class="navbar__link-banner">
+                <img src="/img/multimedia/branding/logo_light_horizontal.svg" alt="logo_FUNKOSHOP" class="navbar__img">
             </a>
         </div>
     
@@ -65,19 +65,19 @@
         <!-- En la docu de la libreria nos pide agregar un nuevo div con la clase que se indica -->
         <div class="glide__track" data-glide-el="track">
           <ul class="slider__items glide__slides">
-            <!-- <li class="slider__item glide__slide">
+             <li class="slider__item glide__slide">
               <article class="card-item">
                 <a class="card-item__link" href="./item.html">
                   <picture class="card-item__cover">
                     <span class="card-item__tag">NUEVO</span>
                     <img
                       class="card-item__img--front"
-                      src="../../img/multimedia/star-wars/trooper-1.webp"
+                      src="/img/multimedia/star-wars/trooper-1.webp"
                       alt="Figura coleccionable Funko de un StormTrooper"
                     />
                     <img
                       class="card-item__img--back"
-                      src="../../img/multimedia/star-wars/trooper-box.webp"
+                      src="/img/multimedia/star-wars/trooper-box.webp"
                       alt="Figura coleccionable Funko de un StormTrooper en caja"
                     />
                   </picture>
@@ -98,12 +98,12 @@
                     <span class="card-item__tag">NUEVO</span>
                     <img
                       class="card-item__img--front"
-                      src="../../img/multimedia/pokemon/pidgeotto-1.webp"
+                      src="/img/multimedia/pokemon/pidgeotto-1.webp"
                       alt="Figura coleccionable Funko de un Pidgeotto"
                     />
                     <img
                       class="card-item__img--back"
-                      src="../../img/multimedia/pokemon/pidgeotto-box.webp"
+                      src="/img/multimedia/pokemon/pidgeotto-box.webp"
                       alt="Figura coleccionable Funko de un Pidgeotto en caja"
                     />
                   </picture>
@@ -124,12 +124,12 @@
                     <span class="card-item__tag">NUEVO</span>
                     <img
                       class="card-item__img--front"
-                      src="../../img/multimedia/harry-potter/luna-1.webp"
+                      src="/img/multimedia/harry-potter/luna-1.webp"
                       alt="Figura coleccionable Funko de un Luna Lovegood"
                     />
                     <img
                       class="card-item__img--back"
-                      src="../../img/multimedia/harry-potter/luna-box.webp"
+                      src="/img/multimedia/harry-potter/luna-box.webp"
                       alt="Figura coleccionable Funko de un Luna Lovegood en caja"
                     />
                   </picture>
@@ -141,7 +141,7 @@
                   </div>
                 </a>
               </article>
-            </li> -->
+            </li> 
           </ul>
         </div>
         <!-- Pegamos de la libreria de glide en el set-up el siguiente div para los botones del slider -->
@@ -174,7 +174,7 @@
               <p class="footer__text">All rights reserved 2023 - Funkoshop &copy;</p>
           </div>
           <div class="footer__logo ">
-              <img src="../../img/multimedia/branding/isotype.svg" alt="logo_FUNKOSHOP" class="footer__img">
+              <img src="/img/multimedia/branding/isotype.svg" alt="logo_FUNKOSHOP" class="footer__img">
           </div>
       </div>
   </footer>

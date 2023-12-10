@@ -7,12 +7,12 @@ const methodOverride = require('method-override');
 //Routes imports:
 const mainRoutes = require("./src/routes/main.routes.js");
 const shopRoutes = require("./src/routes/shop.routes.js");
-//const adminRoutes = require("./src/routes/admin.routes.js");
+const adminRoutes = require("./src/routes/admin.routes.js");
 const authRoutes = require("./src/routes/auth.routes.js");
 
 const PORT = 4000;
 
-app.set('views engine', 'ejs');
+app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './src/views'));
 
 //las rutas siguientes no se usan en el proyecto, son solo para ir probando el servidor
