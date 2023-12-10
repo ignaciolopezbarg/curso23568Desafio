@@ -12,3 +12,5 @@ router.post("/admin/login", (req, res) =>
     res.send("devuelve registro clientes")
   );
 router.post("/admin/register", (req,res)=> res.send('ruta para crear un registro'));
+
+module.exports = router;
