@@ -35,7 +35,7 @@ app.use(express.static("public"));
 // Agrega los middlewares para las distintas rutas:
 app.use("/", mainRoutes);
 app.use("/shop", shopRoutes);
-//app.use("/admin", adminRoutes);
+app.use("/admin", adminRoutes);
 app.use("/auth",authRoutes);
 
 
