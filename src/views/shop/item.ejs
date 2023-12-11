@@ -1,59 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>item</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
-    <!-- Estos dos enlaces son para poder trabajar ocn glidejs, sin usar express, para poder hacer el carussell, los pasamos al css y vienen con import -->
-
-    <link rel="stylesheet" href="/estilos/style.css" />
-  </head>
-  <body>
-    <!-- header -->
-    <header>
-      <nav class="navbar container">
-        <div class="navbar__logo">
-            <a href="../inicio.ejs" class="navbar__link-banner">
-                <img src="/img/multimedia/branding/logo_light_horizontal.svg" alt="logo_FUNKOSHOP" class="navbar__img">
-            </a>
-        </div>
-    
-        <ul class="navbar__list">
-            <li class="navbar__item navbar__item--with-submenu">
-                <a href="./shop.html" class="navbar__link navbar__link--icon">SHOP<i class="fa-solid fa-angle-right icon-animation " class="navbar__icon"></i></a>
-                <ul class="submenu">
-                    <li class="submenu__item">
-                        <a href="..//shop/shop.html" class="submenu__link">FUNKOS</a>
-                    </li>
-                    <li class="submenu__item">
-                        <a href="#" class="submenu__link">LLAVEROS</a>
-                    </li>
-                    <li class="submenu__item">
-                        <a href="#" class="submenu__link">REMERAS</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="navbar__item">
-                <a href="contacto.html" class="navbar__link">CONTACTO</a>
-            </li>
-            <li class="navbar__item">
-                <a href="../admin/login.html" class="navbar__link">LOGIN</a>
-            </li>
-            <li class="navbar__item">
-                <a href="../shop/carrito.html" class="navbar__link">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="navbar__item-cart">0</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    </header>
+<%- include('../partials/header') %>
 
     <main class="container">
       <!-- Seccion con el Baby Yoda BLUEBALL -->
@@ -155,29 +100,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer">
-      <div class="footer__container container">
-          <nav class="footer__navbar navbar">
-              <ul class="footer__list navbar__list">
-                  <li class="footer__item">
-                      <a href="../shop/shop.html" class="footer__link navbar__link"> SHOP</a>
-                  </li>
-                  <li class="footer__item">
-                      <a href="../admin/login.html" class="footer__link navbar__link">INGRESAR</a>
-                  </li>
-                  <li class="footer__item">
-                      <a href="../shop/contacto.html" class="footer__link navbar__link"">CONTACTO</a>
-                  </li>
-              </ul>
-          </nav>
-          <div class="footer__rights">
-              <p class="footer__text">All rights reserved 2023 - Funkoshop &copy;</p>
-          </div>
-          <div class="footer__logo ">
-              <img src="/img/multimedia/branding/isotype.svg" alt="logo_FUNKOSHOP" class="footer__img">
-          </div>
-      </div>
-  </footer>
+   <%- include ('../partials/footer') %>
   <script src="https://kit.fontawesome.com/d82e4588df.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>

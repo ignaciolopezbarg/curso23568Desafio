@@ -1,34 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../estilos/Normalize.css"> <!-- falta esto -->
-    <link rel="stylesheet" href="../../estilos/adminListadoProductos.css">
-    <script src="https://kit.fontawesome.com/d82e4588df.js" crossorigin="anonymous"></script>
-    <title>Funkoshop</title>
-</head>
-<body class="body">
-    <header class="header">
-        <nav class="navbar container">
-            <div class="navbar__logo">
-                <a href="../../inicio.html" class="navbar__link-banner">
-                    <img src="../../img/multimedia/branding/logo_light_horizontal.svg" alt="logo_FUNKOSHOP" class="navbar__img">
-                </a>
-            </div>
-        
-            <ul class="navbar__list">
-                <li class="navbar__item navbar__item--with-submenu">
-                    <a href="/public/pages/shop/shop.html" class="navbar__link navbar__link--icon">VER TIENDA</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="../admin/adminListadoProductos.html" class="navbar__link">ADMIN</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="/public/inicio.html" class="navbar__link">SALIR</a>
-                </li>
-            </ul>
-        </nav>
+<%- include('../partials/header') %>
     </header>
 
     <main class="main">
@@ -297,29 +267,7 @@
     </main>
 
 
-    <footer class="footer">
-        <div class="footer__container container">
-            <nav class="footer__navbar navbar">
-                <ul class="footer__list navbar__list">
-                    <li class="footer__item">
-                        <a href="../shop/shop.html" class="footer__link navbar__link"> SHOP</a>
-                    </li>
-                    <li class="footer__item">
-                        <a href="../admin/login.html" class="footer__link navbar__link">INGRESAR</a>
-                    </li>
-                    <li class="footer__item">
-                        <a href="../shop/contacto.html" class="footer__link navbar__link">CONTACTO</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="footer__rights">
-                <p class="footer__text">All rights reserved 2023 - Funkoshop &copy;</p>
-            </div>
-            <div class="footer__logo ">
-                <img src="../../img/multimedia/branding/logo_light_horizontal.svg" alt="logo_FUNKOSHOP" class="footer__img">
-            </div>
-        </div>
-    </footer> 
+    <%- include('../partials/footer') %>;
 
     <script src="/public/js-fede/ListadoDeProducto.js"></script>
 </body>
