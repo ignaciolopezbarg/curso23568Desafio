@@ -1,5 +1,6 @@
 @import url("http://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css");
 @import url("http://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css");
+
 /* Estos dos enlaces son para poder trabajar con glidjs, sin usar express, para poder hacer el carussell  */
 
 :root {
@@ -525,6 +526,6 @@ header {
   color: var(--light-font);
   padding-bottom: var(--spacing-12);
   align-items: center;
-  font-size: var(--font-small);
+  font-size: var(--font-large);
 }
 

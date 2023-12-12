@@ -1,81 +1,104 @@
-<%- include('../partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Somos alumnos de Codo a Codo, del curso Node JS-JavaScript, comision 23568, con el profesor Sr Alberto Gabriel Feldman"
+    />
+    <meta
+      name="keywords"
+      content="Tienda Funkoshop, articulos de las sagas Star Wars, Pockemon, Harry Potter. Funkos, Remeras, Llaveros"
+    />
+    <title><%= title %> |Funkoshop</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../../../public/estilos/login.css" />
+  </head>
+  <body>
+    <%- include('../partials/header') %>
 
     <main class="main container">
-        
-        <section class="cart">
-            <div class="cart__title-container">
-                <h1 class="cart__title"> CARRITO DE COMPRAS</h1>
-                <hr class="cart__line">
-            </div>
-            
-            <ul class="cart__subtitle position container-shadow ">
-                <li class="cart__subtitle-text">DETALLES DEL PRODUCTO</li>
-                <li class="cart__subtitle-text">CANTIDAD</li>
-                <li class="cart__subtitle-text">TOTAL</li>
-            </ul>
+      <section class="cart">
+        <div class="cart__title-container">
+          <h1 class="cart__title">CARRITO DE COMPRAS</h1>
+          <hr class="cart__line" />
+        </div>
 
-            <section class="cart__items">
-                <div class="cart__item position container-shadow cart__item-empty-text">
-                    <p class="cart__item-empty-text">NO HAY PRODUCTOS SELECCIONADOS</p>              
-                </div>
-            </section>
-            
+        <ul class="cart__subtitle position container-shadow">
+          <li class="cart__subtitle-text">DETALLES DEL PRODUCTO</li>
+          <li class="cart__subtitle-text">CANTIDAD</li>
+          <li class="cart__subtitle-text">TOTAL</li>
+        </ul>
+
+        <section class="cart__items">
+          <div
+            class="cart__item position container-shadow cart__item-empty-text"
+          >
+            <p class="cart__item-empty-text">NO HAY PRODUCTOS SELECCIONADOS</p>
+          </div>
         </section>
-        
-        <section class="cart__resumen">
-            <div class="cart__resumen-title-container cart__title">
-                <h1 class="cart__resumen-title">RESUMEN <hr class="cart__resumen-line cart__line"></h1>
+      </section>
+
+      <section class="cart__resumen">
+        <div class="cart__resumen-title-container cart__title">
+          <h1 class="cart__resumen-title">
+            RESUMEN
+            <hr class="cart__resumen-line cart__line" />
+          </h1>
+        </div>
+
+        <div class="cart__total-items container-shadow">
+          <div class="cart__resumen-items">
+            <div class="cart__resumen-text cart__resumen-items-padding">
+              <p>CANTIDAD DE ELEMENTOS</p>
+              <p>SUBTOTAL</p>
+              <p>ENVIO</p>
             </div>
-
-            <div class="cart__total-items container-shadow">
-
-                <div class="cart__resumen-items">
-
-                    <div class="cart__resumen-text cart__resumen-items-padding">
-
-                        <p >CANTIDAD DE ELEMENTOS</p>
-                        <p >SUBTOTAL</p>
-                        <p >ENVIO</p>
-
-                    </div>
-                    <div class="cart__resumen-numbers cart__resumen-items-padding">
-
-                        <!-- <p>3</p> -->
-                        <div class="cart__resumen-numbers-subtotal">
-                            <p class="cart__resumen-numbers-amount" >0</p>
-                        </div>
-                        <div class="cart__resumen-numbers-subtotal">
-                            <span>$</span>
-                            <p class="cart__resumen-numbers-subtotal-value">0</p>
-                        </div>
-                        <div class="cart__resumen-numbers-subtotal">
-                            <span>$</span>
-                            <p class="cart__resumen-numbers-envio-value">300</p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="cart-total">
-                    <hr class="cart__resumen-bar cart__line">
-                    <div class="cart__resumen-total-payment">
-                        <p>TOTAL</p>
-                        <div class="cart__resumen-numbers-subtotal">
-                            <span>$</span>
-                            <p class="cart__resumen-numbers-total">0</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="cart__resumen-numbers cart__resumen-items-padding">
+              <!-- <p>3</p> -->
+              <div class="cart__resumen-numbers-subtotal">
+                <p class="cart__resumen-numbers-amount">0</p>
+              </div>
+              <div class="cart__resumen-numbers-subtotal">
+                <span>$</span>
+                <p class="cart__resumen-numbers-subtotal-value">0</p>
+              </div>
+              <div class="cart__resumen-numbers-subtotal">
+                <span>$</span>
+                <p class="cart__resumen-numbers-envio-value">300</p>
+              </div>
             </div>
-            <button class="cart__btn-payment btn-shadow">IR A PAGAR</button>
-        </section>
+          </div>
+
+          <div class="cart-total">
+            <hr class="cart__resumen-bar cart__line" />
+            <div class="cart__resumen-total-payment">
+              <p>TOTAL</p>
+              <div class="cart__resumen-numbers-subtotal">
+                <span>$</span>
+                <p class="cart__resumen-numbers-total">0</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="cart__btn-payment btn-shadow">IR A PAGAR</button>
+      </section>
     </main>
-    
-   <%- include ('../partials/footer') %>
 
-    <script src="https://kit.fontawesome.com/d82e4588df.js" crossorigin="anonymous"></script>
+    <%- include ('../partials/footer') %>
+
+    <script
+      src="https://kit.fontawesome.com/d82e4588df.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="../../js-fede/carritoFunctions.js"></script>
     <script src="../../js-fede/Carrito.js"></script>
-</body>
+  </body>
 </html>

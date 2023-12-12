@@ -2,7 +2,7 @@
 const productos = 
 [
     {   
-        product_id: "1",
+        product_id: "",
         categoria: "STAR WARS",
         product_name: "BABY YODA BLUEBALL",
         product_description: "Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian Saga, edición limitada.",

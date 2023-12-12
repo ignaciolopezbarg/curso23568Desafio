@@ -1,274 +1,366 @@
-<%- include('../partials/header') %>
-    </header>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Somos alumnos de Codo a Codo, del curso Node JS-JavaScript, comision 23568, con el profesor Sr Alberto Gabriel Feldman"
+    />
+    <meta
+      name="keywords"
+      content="Tienda Funkoshop, articulos de las sagas Star Wars, Pockemon, Harry Potter. Funkos, Remeras, Llaveros"
+    />
+    <title><%= title %> |Funkoshop</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./estilos/adminListadoProductos.css/" />
+  </head>
+  <body>
+    <%- include('../partials/header') %>
 
     <main class="main">
+      <div class="search container">
+        <i
+          class="fa-solid fa-magnifying-glass search-icon"
+          style="color: #000000"
+        ></i>
+        <input
+          type="text"
+          class="search-product"
+          placeholder="Nombre de producto..."
+        />
+      </div>
 
-        <div class="search container">
-            <i class="fa-solid fa-magnifying-glass search-icon" style="color: #000000;"></i>
-            <input type="text" class="search-product" placeholder="Nombre de producto...">
+      <section class="title-list container">
+        <h1 class="title-list__text">LISTADO DE PRODUCTOS</h1>
+        <div class="title-list__add-container">
+          <span class="title-list__add-text">AGREGAR</span>
+          <a href="../admin/editar-item.html" class="title-list__buttom-link">
+            <i
+              class="fa-solid fa-plus bottom-decrease-increase title-list__add-bottom"
+            ></i>
+          </a>
+        </div>
+      </section>
+
+      <section class="listProducts container container-shadow">
+        <div class="listProducts__sections">
+          <p class="listProducts__text">ID</p>
+          <p class="listProducts__text">Código</p>
+          <p class="listProducts__text">Nombre del producto</p>
+          <p class="listProducts__text">Categoria</p>
         </div>
 
-        <section class="title-list container">
-            <h1 class="title-list__text">LISTADO DE PRODUCTOS</h1>
-            <div class="title-list__add-container">
-                <span class="title-list__add-text ">AGREGAR</span>
-                <a href="../admin/editar-item.html" class="title-list__buttom-link">
-                    <i class="fa-solid fa-plus bottom-decrease-increase title-list__add-bottom "></i>
-                </a>
-            </div>
-        </section>
-
-        <section class="listProducts container container-shadow ">
-            <div class="listProducts__sections ">
-                <p class="listProducts__text">ID</p>
-                <p class="listProducts__text">Código</p>
-                <p class="listProducts__text">Nombre del producto</p>
-                <p class="listProducts__text">Categoria</p>
-            </div>
-            
-            <div class="list__products__section-info">
-                <div class="listProducts__sections-mobile ">
-                    <p class="listProducts__text-mobile">ID</p>
-                    <p class="listProducts__text-mobile">Código</p>
-                    <p class="listProducts__text-mobile">Nombre del producto</p>
-                    <p class="listProducts__text-mobile">Categoria</p>
-                </div>
-                <div class="listProducts__information">
-                    <p class="listProducts__text-info" id="ID">1</p>
-                    <p class="listProducts__text-info" id="Código">SWT001001</p>
-                    <p class="listProducts__text-info" id="Nombre-del-Producto">Baby Yoda Blueball </p>
-                    <p class="listProducts__text-info" id="Categoria">STAR WARS</p>
-                    <a href="/public/pages/admin/editar-item.html" class="listProducts__edit-link ">
-                        <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
-                    </a>
-                    <i class="fa-solid fa-trash listProducts__delete-info"></i>
-                </div>
-            </div>
-            <div class="list__products__section-info">
-                <div class="listProducts__sections-mobile ">
-                    <p class="listProducts__text-mobile">ID</p>
-                    <p class="listProducts__text-mobile">Código</p>
-                    <p class="listProducts__text-mobile">Nombre del producto</p>
-                    <p class="listProducts__text-mobile">Categoria</p>
-                </div>
-                <div class="listProducts__information">
-                    <p class="listProducts__text-info" id="ID">2</p>
-                    <p class="listProducts__text-info" id="Código">SWT001002</p>
-                    <p class="listProducts__text-info" id="Nombre-del-Producto">Boba Fett Fighter
-                    </p>
-                    <p class="listProducts__text-info" id="Categoria">STAR WARS</p>
-                    <a href="/public/pages/admin/editar-item.html" class="listProducts__edit-link ">
-                        <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
-                    </a>
-                    <i class="fa-solid fa-trash listProducts__delete-info"></i>
-                </div>
-            </div>
-            <div class="list__products__section-info">
-                <div class="listProducts__sections-mobile ">
-                    <p class="listProducts__text-mobile">ID</p>
-                    <p class="listProducts__text-mobile">Código</p>
-                    <p class="listProducts__text-mobile">Nombre del producto</p>
-                    <p class="listProducts__text-mobile">Categoria</p>
-                </div>
-                <div class="listProducts__information">
-                    <p class="listProducts__text-info" id="ID">3</p>
-                    <p class="listProducts__text-info" id="Código">SWT001003</p>
-                    <p class="listProducts__text-info" id="Nombre-del-Producto">Luke Skylwalker & Grogu</p>
-                    <p class="listProducts__text-info" id="Categoria">STAR WARS</p>
-                    <a href="/public/pages/admin/editar-item.html" class="listProducts__edit-link ">
-                        <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
-                    </a>
-                    <i class="fa-solid fa-trash listProducts__delete-info"></i>
-                </div>
-            </div>
-            <div class="list__products__section-info">
-                <div class="listProducts__sections-mobile ">
-                    <p class="listProducts__text-mobile">ID</p>
-                    <p class="listProducts__text-mobile">Código</p>
-                    <p class="listProducts__text-mobile">Nombre del producto</p>
-                    <p class="listProducts__text-mobile">Categoria</p>
-                </div>
-                <div class="listProducts__information">
-                    <p class="listProducts__text-info" id="ID">4</p>
-                    <p class="listProducts__text-info" id="Código">SWT001004</p>
-                    <p class="listProducts__text-info" id="Nombre-del-Producto">Stormtrooper Lightsaber</p>
-                    <p class="listProducts__text-info" id="Categoria">STAR WARS</p>
-                    <a href="/public/pages/admin/editar-item.html" class="listProducts__edit-link ">
-                        <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
-                    </a>
-                    <i class="fa-solid fa-trash listProducts__delete-info"></i>
-                </div>
-            </div>
-            <div class="list__products__section-info">
-                <div class="listProducts__sections-mobile ">
-                    <p class="listProducts__text-mobile">ID</p>
-                    <p class="listProducts__text-mobile">Código</p>
-                    <p class="listProducts__text-mobile">Nombre del producto</p>
-                    <p class="listProducts__text-mobile">Categoria</p>
-                </div>
-                <div class="listProducts__information">
-                    <p class="listProducts__text-info" id="ID">5</p>
-                    <p class="listProducts__text-info" id="Código">PKM001001</p>
-                    <p class="listProducts__text-info" id="Nombre-del-Producto">Charmander Smiley</p>
-                    <p class="listProducts__text-info" id="Categoria">POKEMON</p>
-                    <a href="/public/pages/admin/editar-item.html" class="listProducts__edit-link ">
-                        <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
-                    </a>
-                    <i class="fa-solid fa-trash listProducts__delete-info"></i>
-                </div>
-            </div>
-            <div class="list__products__section-info">
-                <div class="listProducts__sections-mobile ">
-                    <p class="listProducts__text-mobile">ID</p>
-                    <p class="listProducts__text-mobile">Código</p>
-                    <p class="listProducts__text-mobile">Nombre del producto</p>
-                    <p class="listProducts__text-mobile">Categoria</p>
-                </div>
-                <div class="listProducts__information">
-                    <p class="listProducts__text-info" id="ID">6</p>
-                    <p class="listProducts__text-info" id="Código">PKM001002</p>
-                    <p class="listProducts__text-info" id="Nombre-del-Producto">Dragonite Hi!</p>
-                    <p class="listProducts__text-info" id="Categoria">POKEMON</p>
-                    <a href="/public/pages/admin/editar-item.html" class="listProducts__edit-link ">
-                        <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
-                    </a>
-                    <i class="fa-solid fa-trash listProducts__delete-info"></i>
-                </div>
-            </div>
-            <div class="list__products__section-info">
-                <div class="listProducts__sections-mobile ">
-                    <p class="listProducts__text-mobile">ID</p>
-                    <p class="listProducts__text-mobile">Código</p>
-                    <p class="listProducts__text-mobile">Nombre del producto</p>
-                    <p class="listProducts__text-mobile">Categoria</p>
-                </div>
-                <div class="listProducts__information">
-                    <p class="listProducts__text-info" id="ID">7</p>
-                    <p class="listProducts__text-info" id="Código">PKM001003</p>
-                    <p class="listProducts__text-info" id="Nombre-del-Producto">Pidgeotto Flying</p>
-                    <p class="listProducts__text-info" id="Categoria">POKEMON</p>
-                    <a href="/public/pages/admin/editar-item.html" class="listProducts__edit-link ">
-                        <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
-                    </a>
-                    <i class="fa-solid fa-trash listProducts__delete-info"></i>
-                </div>
-            </div>
-            <div class="list__products__section-info">
-                <div class="listProducts__sections-mobile ">
-                    <p class="listProducts__text-mobile">ID</p>
-                    <p class="listProducts__text-mobile">Código</p>
-                    <p class="listProducts__text-mobile">Nombre del producto</p>
-                    <p class="listProducts__text-mobile">Categoria</p>
-                </div>
-                <div class="listProducts__information">
-                    <p class="listProducts__text-info" id="ID">8</p>
-                    <p class="listProducts__text-info" id="Código">PKM001004</p>
-                    <p class="listProducts__text-info" id="Nombre-del-Producto">Pikachu Smiley</p>
-                    <p class="listProducts__text-info" id="Categoria">POKEMON</p>
-                    <a href="/public/pages/admin/editar-item.html" class="listProducts__edit-link ">
-                        <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
-                    </a>
-                    <i class="fa-solid fa-trash listProducts__delete-info"></i>
-                </div>
-            </div>
-            <div class="list__products__section-info">
-                <div class="listProducts__sections-mobile ">
-                    <p class="listProducts__text-mobile">ID</p>
-                    <p class="listProducts__text-mobile">Código</p>
-                    <p class="listProducts__text-mobile">Nombre del producto</p>
-                    <p class="listProducts__text-mobile">Categoria</p>
-                </div>
-                <div class="listProducts__information">
-                    <p class="listProducts__text-info" id="ID">9</p>
-                    <p class="listProducts__text-info" id="Código">PKM001005</p>
-                    <p class="listProducts__text-info" id="Nombre-del-Producto">Vulpix Fancy </p>
-                    <p class="listProducts__text-info" id="Categoria">POKEMON</p>
-                    <a href="/public/pages/admin/editar-item.html" class="listProducts__edit-link ">
-                        <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
-                    </a>
-                    <i class="fa-solid fa-trash listProducts__delete-info"></i>
-                </div>
-            </div>
-            <div class="list__products__section-info">
-                <div class="listProducts__sections-mobile ">
-                    <p class="listProducts__text-mobile">ID</p>
-                    <p class="listProducts__text-mobile">Código</p>
-                    <p class="listProducts__text-mobile">Nombre del producto</p>
-                    <p class="listProducts__text-mobile">Categoria</p>
-                </div>
-                <div class="listProducts__information">
-                    <p class="listProducts__text-info" id="ID">10</p>
-                    <p class="listProducts__text-info" id="Código">HPT001001</p>
-                    <p class="listProducts__text-info" id="Nombre-del-Producto">Harry Potter & Hegwid</p>
-                    <p class="listProducts__text-info" id="Categoria">HARRY POTTER</p>
-                    <a href="/public/pages/admin/editar-item.html" class="listProducts__edit-link ">
-                        <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
-                    </a>
-                    <i class="fa-solid fa-trash listProducts__delete-info"></i>
-                </div>
-            </div>
-            <div class="list__products__section-info">
-                <div class="listProducts__sections-mobile ">
-                    <p class="listProducts__text-mobile">ID</p>
-                    <p class="listProducts__text-mobile">Código</p>
-                    <p class="listProducts__text-mobile">Nombre del producto</p>
-                    <p class="listProducts__text-mobile">Categoria</p>
-                </div>
-                <div class="listProducts__information">
-                    <p class="listProducts__text-info" id="ID">11</p>
-                    <p class="listProducts__text-info" id="Código">HPT001002</p>
-                    <p class="listProducts__text-info" id="Nombre-del-Producto">Herminione Ball Dress </p>
-                    <p class="listProducts__text-info" id="Categoria">HARRY POTTER</p>
-                    <a href="/public/pages/admin/editar-item.html" class="listProducts__edit-link ">
-                        <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
-                    </a>
-                    <i class="fa-solid fa-trash listProducts__delete-info"></i>
-                </div>
-            </div>
-            <div class="list__products__section-info">
-                <div class="listProducts__sections-mobile ">
-                    <p class="listProducts__text-mobile">ID</p>
-                    <p class="listProducts__text-mobile">Código</p>
-                    <p class="listProducts__text-mobile">Nombre del producto</p>
-                    <p class="listProducts__text-mobile">Categoria</p>
-                </div>
-                <div class="listProducts__information">
-                    <p class="listProducts__text-info" id="ID">12</p>
-                    <p class="listProducts__text-info" id="Código">HPT001003</p>
-                    <p class="listProducts__text-info" id="Nombre-del-Producto">Luna Lovegood Lion Mask </p>
-                    <p class="listProducts__text-info" id="Categoria">HARRY POTTER</p>
-                    <a href="/public/pages/admin/editar-item.html" class="listProducts__edit-link ">
-                        <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
-                    </a>
-                    <i class="fa-solid fa-trash listProducts__delete-info"></i>
-                </div>
-            </div>
-            <div class="list__products__section-info">
-                <div class="listProducts__sections-mobile ">
-                    <p class="listProducts__text-mobile">ID</p>
-                    <p class="listProducts__text-mobile">Código</p>
-                    <p class="listProducts__text-mobile">Nombre del producto</p>
-                    <p class="listProducts__text-mobile">Categoria</p>
-                </div>
-                <div class="listProducts__information">
-                    <p class="listProducts__text-info" id="ID">13</p>
-                    <p class="listProducts__text-info" id="Código">HPT001004</p>
-                    <p class="listProducts__text-info" id="Nombre-del-Producto">Snape Patronus </p>
-                    <p class="listProducts__text-info" id="Categoria">HARRY POTTER</p>
-                    <a href="/public/pages/admin/editar-item.html" class="listProducts__edit-link ">
-                        <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
-                    </a>
-                    <i class="fa-solid fa-trash listProducts__delete-info"></i>
-                </div>
-            </div>
-        </section>
-        
-
+        <div class="list__products__section-info">
+          <div class="listProducts__sections-mobile">
+            <p class="listProducts__text-mobile">ID</p>
+            <p class="listProducts__text-mobile">Código</p>
+            <p class="listProducts__text-mobile">Nombre del producto</p>
+            <p class="listProducts__text-mobile">Categoria</p>
+          </div>
+          <div class="listProducts__information">
+            <p class="listProducts__text-info" id="ID">1</p>
+            <p class="listProducts__text-info" id="Código">SWT001001</p>
+            <p class="listProducts__text-info" id="Nombre-del-Producto">
+              Baby Yoda Blueball
+            </p>
+            <p class="listProducts__text-info" id="Categoria">STAR WARS</p>
+            <a
+              href="/public/pages/admin/editar-item.html"
+              class="listProducts__edit-link"
+            >
+              <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
+            </a>
+            <i class="fa-solid fa-trash listProducts__delete-info"></i>
+          </div>
+        </div>
+        <div class="list__products__section-info">
+          <div class="listProducts__sections-mobile">
+            <p class="listProducts__text-mobile">ID</p>
+            <p class="listProducts__text-mobile">Código</p>
+            <p class="listProducts__text-mobile">Nombre del producto</p>
+            <p class="listProducts__text-mobile">Categoria</p>
+          </div>
+          <div class="listProducts__information">
+            <p class="listProducts__text-info" id="ID">2</p>
+            <p class="listProducts__text-info" id="Código">SWT001002</p>
+            <p class="listProducts__text-info" id="Nombre-del-Producto">
+              Boba Fett Fighter
+            </p>
+            <p class="listProducts__text-info" id="Categoria">STAR WARS</p>
+            <a
+              href="/public/pages/admin/editar-item.html"
+              class="listProducts__edit-link"
+            >
+              <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
+            </a>
+            <i class="fa-solid fa-trash listProducts__delete-info"></i>
+          </div>
+        </div>
+        <div class="list__products__section-info">
+          <div class="listProducts__sections-mobile">
+            <p class="listProducts__text-mobile">ID</p>
+            <p class="listProducts__text-mobile">Código</p>
+            <p class="listProducts__text-mobile">Nombre del producto</p>
+            <p class="listProducts__text-mobile">Categoria</p>
+          </div>
+          <div class="listProducts__information">
+            <p class="listProducts__text-info" id="ID">3</p>
+            <p class="listProducts__text-info" id="Código">SWT001003</p>
+            <p class="listProducts__text-info" id="Nombre-del-Producto">
+              Luke Skylwalker & Grogu
+            </p>
+            <p class="listProducts__text-info" id="Categoria">STAR WARS</p>
+            <a
+              href="/public/pages/admin/editar-item.html"
+              class="listProducts__edit-link"
+            >
+              <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
+            </a>
+            <i class="fa-solid fa-trash listProducts__delete-info"></i>
+          </div>
+        </div>
+        <div class="list__products__section-info">
+          <div class="listProducts__sections-mobile">
+            <p class="listProducts__text-mobile">ID</p>
+            <p class="listProducts__text-mobile">Código</p>
+            <p class="listProducts__text-mobile">Nombre del producto</p>
+            <p class="listProducts__text-mobile">Categoria</p>
+          </div>
+          <div class="listProducts__information">
+            <p class="listProducts__text-info" id="ID">4</p>
+            <p class="listProducts__text-info" id="Código">SWT001004</p>
+            <p class="listProducts__text-info" id="Nombre-del-Producto">
+              Stormtrooper Lightsaber
+            </p>
+            <p class="listProducts__text-info" id="Categoria">STAR WARS</p>
+            <a
+              href="/public/pages/admin/editar-item.html"
+              class="listProducts__edit-link"
+            >
+              <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
+            </a>
+            <i class="fa-solid fa-trash listProducts__delete-info"></i>
+          </div>
+        </div>
+        <div class="list__products__section-info">
+          <div class="listProducts__sections-mobile">
+            <p class="listProducts__text-mobile">ID</p>
+            <p class="listProducts__text-mobile">Código</p>
+            <p class="listProducts__text-mobile">Nombre del producto</p>
+            <p class="listProducts__text-mobile">Categoria</p>
+          </div>
+          <div class="listProducts__information">
+            <p class="listProducts__text-info" id="ID">5</p>
+            <p class="listProducts__text-info" id="Código">PKM001001</p>
+            <p class="listProducts__text-info" id="Nombre-del-Producto">
+              Charmander Smiley
+            </p>
+            <p class="listProducts__text-info" id="Categoria">POKEMON</p>
+            <a
+              href="/public/pages/admin/editar-item.html"
+              class="listProducts__edit-link"
+            >
+              <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
+            </a>
+            <i class="fa-solid fa-trash listProducts__delete-info"></i>
+          </div>
+        </div>
+        <div class="list__products__section-info">
+          <div class="listProducts__sections-mobile">
+            <p class="listProducts__text-mobile">ID</p>
+            <p class="listProducts__text-mobile">Código</p>
+            <p class="listProducts__text-mobile">Nombre del producto</p>
+            <p class="listProducts__text-mobile">Categoria</p>
+          </div>
+          <div class="listProducts__information">
+            <p class="listProducts__text-info" id="ID">6</p>
+            <p class="listProducts__text-info" id="Código">PKM001002</p>
+            <p class="listProducts__text-info" id="Nombre-del-Producto">
+              Dragonite Hi!
+            </p>
+            <p class="listProducts__text-info" id="Categoria">POKEMON</p>
+            <a
+              href="/public/pages/admin/editar-item.html"
+              class="listProducts__edit-link"
+            >
+              <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
+            </a>
+            <i class="fa-solid fa-trash listProducts__delete-info"></i>
+          </div>
+        </div>
+        <div class="list__products__section-info">
+          <div class="listProducts__sections-mobile">
+            <p class="listProducts__text-mobile">ID</p>
+            <p class="listProducts__text-mobile">Código</p>
+            <p class="listProducts__text-mobile">Nombre del producto</p>
+            <p class="listProducts__text-mobile">Categoria</p>
+          </div>
+          <div class="listProducts__information">
+            <p class="listProducts__text-info" id="ID">7</p>
+            <p class="listProducts__text-info" id="Código">PKM001003</p>
+            <p class="listProducts__text-info" id="Nombre-del-Producto">
+              Pidgeotto Flying
+            </p>
+            <p class="listProducts__text-info" id="Categoria">POKEMON</p>
+            <a
+              href="/public/pages/admin/editar-item.html"
+              class="listProducts__edit-link"
+            >
+              <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
+            </a>
+            <i class="fa-solid fa-trash listProducts__delete-info"></i>
+          </div>
+        </div>
+        <div class="list__products__section-info">
+          <div class="listProducts__sections-mobile">
+            <p class="listProducts__text-mobile">ID</p>
+            <p class="listProducts__text-mobile">Código</p>
+            <p class="listProducts__text-mobile">Nombre del producto</p>
+            <p class="listProducts__text-mobile">Categoria</p>
+          </div>
+          <div class="listProducts__information">
+            <p class="listProducts__text-info" id="ID">8</p>
+            <p class="listProducts__text-info" id="Código">PKM001004</p>
+            <p class="listProducts__text-info" id="Nombre-del-Producto">
+              Pikachu Smiley
+            </p>
+            <p class="listProducts__text-info" id="Categoria">POKEMON</p>
+            <a
+              href="/public/pages/admin/editar-item.html"
+              class="listProducts__edit-link"
+            >
+              <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
+            </a>
+            <i class="fa-solid fa-trash listProducts__delete-info"></i>
+          </div>
+        </div>
+        <div class="list__products__section-info">
+          <div class="listProducts__sections-mobile">
+            <p class="listProducts__text-mobile">ID</p>
+            <p class="listProducts__text-mobile">Código</p>
+            <p class="listProducts__text-mobile">Nombre del producto</p>
+            <p class="listProducts__text-mobile">Categoria</p>
+          </div>
+          <div class="listProducts__information">
+            <p class="listProducts__text-info" id="ID">9</p>
+            <p class="listProducts__text-info" id="Código">PKM001005</p>
+            <p class="listProducts__text-info" id="Nombre-del-Producto">
+              Vulpix Fancy
+            </p>
+            <p class="listProducts__text-info" id="Categoria">POKEMON</p>
+            <a
+              href="/public/pages/admin/editar-item.html"
+              class="listProducts__edit-link"
+            >
+              <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
+            </a>
+            <i class="fa-solid fa-trash listProducts__delete-info"></i>
+          </div>
+        </div>
+        <div class="list__products__section-info">
+          <div class="listProducts__sections-mobile">
+            <p class="listProducts__text-mobile">ID</p>
+            <p class="listProducts__text-mobile">Código</p>
+            <p class="listProducts__text-mobile">Nombre del producto</p>
+            <p class="listProducts__text-mobile">Categoria</p>
+          </div>
+          <div class="listProducts__information">
+            <p class="listProducts__text-info" id="ID">10</p>
+            <p class="listProducts__text-info" id="Código">HPT001001</p>
+            <p class="listProducts__text-info" id="Nombre-del-Producto">
+              Harry Potter & Hegwid
+            </p>
+            <p class="listProducts__text-info" id="Categoria">HARRY POTTER</p>
+            <a
+              href="/public/pages/admin/editar-item.html"
+              class="listProducts__edit-link"
+            >
+              <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
+            </a>
+            <i class="fa-solid fa-trash listProducts__delete-info"></i>
+          </div>
+        </div>
+        <div class="list__products__section-info">
+          <div class="listProducts__sections-mobile">
+            <p class="listProducts__text-mobile">ID</p>
+            <p class="listProducts__text-mobile">Código</p>
+            <p class="listProducts__text-mobile">Nombre del producto</p>
+            <p class="listProducts__text-mobile">Categoria</p>
+          </div>
+          <div class="listProducts__information">
+            <p class="listProducts__text-info" id="ID">11</p>
+            <p class="listProducts__text-info" id="Código">HPT001002</p>
+            <p class="listProducts__text-info" id="Nombre-del-Producto">
+              Herminione Ball Dress
+            </p>
+            <p class="listProducts__text-info" id="Categoria">HARRY POTTER</p>
+            <a
+              href="/public/pages/admin/editar-item.html"
+              class="listProducts__edit-link"
+            >
+              <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
+            </a>
+            <i class="fa-solid fa-trash listProducts__delete-info"></i>
+          </div>
+        </div>
+        <div class="list__products__section-info">
+          <div class="listProducts__sections-mobile">
+            <p class="listProducts__text-mobile">ID</p>
+            <p class="listProducts__text-mobile">Código</p>
+            <p class="listProducts__text-mobile">Nombre del producto</p>
+            <p class="listProducts__text-mobile">Categoria</p>
+          </div>
+          <div class="listProducts__information">
+            <p class="listProducts__text-info" id="ID">12</p>
+            <p class="listProducts__text-info" id="Código">HPT001003</p>
+            <p class="listProducts__text-info" id="Nombre-del-Producto">
+              Luna Lovegood Lion Mask
+            </p>
+            <p class="listProducts__text-info" id="Categoria">HARRY POTTER</p>
+            <a
+              href="/public/pages/admin/editar-item.html"
+              class="listProducts__edit-link"
+            >
+              <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
+            </a>
+            <i class="fa-solid fa-trash listProducts__delete-info"></i>
+          </div>
+        </div>
+        <div class="list__products__section-info">
+          <div class="listProducts__sections-mobile">
+            <p class="listProducts__text-mobile">ID</p>
+            <p class="listProducts__text-mobile">Código</p>
+            <p class="listProducts__text-mobile">Nombre del producto</p>
+            <p class="listProducts__text-mobile">Categoria</p>
+          </div>
+          <div class="listProducts__information">
+            <p class="listProducts__text-info" id="ID">13</p>
+            <p class="listProducts__text-info" id="Código">HPT001004</p>
+            <p class="listProducts__text-info" id="Nombre-del-Producto">
+              Snape Patronus
+            </p>
+            <p class="listProducts__text-info" id="Categoria">HARRY POTTER</p>
+            <a
+              href="/public/pages/admin/editar-item.html"
+              class="listProducts__edit-link"
+            >
+              <i class="fa-solid fa-pen listProducts__edit-bottom"></i>
+            </a>
+            <i class="fa-solid fa-trash listProducts__delete-info"></i>
+          </div>
+        </div>
+      </section>
     </main>
-
 
     <%- include('../partials/footer') %>;
 
     <script src="/public/js-fede/ListadoDeProducto.js"></script>
-</body>
+  </body>
 </html>

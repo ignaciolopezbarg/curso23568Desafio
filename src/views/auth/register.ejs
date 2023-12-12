@@ -1,69 +1,135 @@
-<%- include('../partials/header') %>
-<body>
-    
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Somos alumnos de Codo a Codo, del curso Node JS-JavaScript, comision 23568, con el profesor Sr Alberto Gabriel Feldman"
+    />
+    <meta
+      name="keywords"
+      content="Tienda Funkoshop, articulos de las sagas Star Wars, Pockemon, Harry Potter. Funkos, Remeras, Llaveros"
+    />
+    <title><%= title %> |Funkoshop</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../estilos/login.css" />
+  </head>
+
+  <body>
+    <%- include('../partials/header') %>
 
     <!-- formulario -->
     <main class="main">
+      <div class="formulario">
+        <h1 class="formulario__title">CREA TU CUENTA</h1>
 
-        <div class="formulario">
-    
-            <h1 class="formulario__title">CREA TU CUENTA</h1>
-    
-            <span class="formulario__description">completa el formulario para ser parte del mundo de los funkos
-            </span>
-    
-            <form name="myForm" action="/submit_form" onsubmit="return validateForm()" method="post" class="formulario__container container-shadow">
-    
-                <div>
-                    <label class="formulario__item-text" for="name">Nombre:</label>
-                    <input class="formulario__item" type="text" id="name" name="name" required placeholder="Nombre">
-                </div>
-                <div>
-                    <label class="formulario__item-text" for="apellido">Apellido:</label>
-                    <input class="formulario__item" type="text" id="apellido" name="fname" required placeholder="Apellido">
-                </div>
-    
-                <div>
-                    <label class="formulario__item-text" for="email">Email:</label>
-                    <input class="formulario__item" type="email" id="email" name="email" required placeholder="nombre@gmail.com">
-                </div>
-                <div>
-                    <label class="formulario__item-text" for="psw">Contraseña:</label>
-                    <input class="formulario__item" type="password" id="psw" name="psw" required placeholder="********">
-                </div>
-    
-                <div>
-                    <label class="formulario__item-text" for="psw-repeat">Repita contraseña:</label>
-                    <input class="formulario__item" type="password" id="psw-repeat" name="psw-repeat" required placeholder="********">
-                </div>
-                <div class="formulario__btn-container">
+        <span class="formulario__description"
+          >completa el formulario para ser parte del mundo de los funkos
+        </span>
 
-                    <input class="formulario__btn " type="submit" value="Crear">
+        <form
+          name="myForm"
+          action="/submit_form"
+          onsubmit="return validateForm()"
+          method="post"
+          class="formulario__container container-shadow"
+        >
+          <div>
+            <label class="formulario__item-text" for="name">Nombre:</label>
+            <input
+              class="formulario__item"
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Nombre"
+            />
+          </div>
+          <div>
+            <label class="formulario__item-text" for="apellido"
+              >Apellido:</label
+            >
+            <input
+              class="formulario__item"
+              type="text"
+              id="apellido"
+              name="fname"
+              required
+              placeholder="Apellido"
+            />
+          </div>
 
-                    <div class="formulario__condiciones-container">
+          <div>
+            <label class="formulario__item-text" for="email">Email:</label>
+            <input
+              class="formulario__item"
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="nombre@gmail.com"
+            />
+          </div>
+          <div>
+            <label class="formulario__item-text" for="psw">Contraseña:</label>
+            <input
+              class="formulario__item"
+              type="password"
+              id="psw"
+              name="psw"
+              required
+              placeholder="********"
+            />
+          </div>
 
-                        <input type="checkbox" class="formulario__btn-check">
+          <div>
+            <label class="formulario__item-text" for="psw-repeat"
+              >Repita contraseña:</label
+            >
+            <input
+              class="formulario__item"
+              type="password"
+              id="psw-repeat"
+              name="psw-repeat"
+              required
+              placeholder="********"
+            />
+          </div>
+          <div class="formulario__btn-container">
+            <input class="formulario__btn" type="submit" value="Crear" />
 
-                        <p class="formulario__condiciones-text">Acepto</p>
+            <div class="formulario__condiciones-container">
+              <input type="checkbox" class="formulario__btn-check" />
 
-                        <p class="formulario__condiciones-text formulario__condiciones-text-blue">Términos y Condiciones</p>
+              <p class="formulario__condiciones-text">Acepto</p>
 
-                    </div>
-                </div>
-    
-            </form>
-    
-        </div>
+              <p
+                class="formulario__condiciones-text formulario__condiciones-text-blue"
+              >
+                Términos y Condiciones
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
     </main>
 
     <!-- footer -->
+    
     <%- include ('../partials/footer') %>
 
-        <!-- <script src="./js/bootstrap.bundle.min.js"></script> -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" -->
-            <!-- integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+kD4Ck5BdPtF+to8xMp9Mvc9E3I3WQ8wKUi3A0/GIi2vz9Z+GoiPkYs+gydKh3GpC/gZcI2Pf3Cj02qNW43wXxMf3oP81p3V7+8fvE+04vflMG22d6/lwZYhN42C9Xp28O17xOvT4A0XUt/Lk/g"
+    <!-- <script src="./js/bootstrap.bundle.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" -->
+    <!-- integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+kD4Ck5BdPtF+to8xMp9Mvc9E3I3WQ8wKUi3A0/GIi2vz9Z+GoiPkYs+gydKh3GpC/gZcI2Pf3Cj02qNW43wXxMf3oP81p3V7+8fvE+04vflMG22d6/lwZYhN42C9Xp28O17xOvT4A0XUt/Lk/g"
             crossorigin="anonymous"></script> -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../../js/login.js"></script>
   </body>
 </html>
