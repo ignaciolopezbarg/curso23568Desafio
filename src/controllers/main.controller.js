@@ -4,13 +4,13 @@ module.exports ={
     home:
     (req,res)=>{
         res.render('inicio',{
-            title:"HOME"
+            title:"Home"
         })},
         //A la ruta le agregue un segundo parametro con el title del head, que esta en la carpeta partials header.ejs
     contact:
     (req,res)=>
     res.render('Route for Contact View',{
-        title:'CONTACTO'
+        title:'Contacto'
     }),
     about:
     (req,res)=>

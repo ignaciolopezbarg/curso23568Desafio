@@ -19,7 +19,7 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="../../../public/estilos/login.css" />
+    <link rel="stylesheet" href="/estilos/style.css" />
   </head>
 <body>
   
@@ -37,7 +37,7 @@
           <ul class="slider__items glide__slides">
              <li class="slider__item glide__slide">
               <article class="card-item">
-                <a class="card-item__link" href="./item.html">
+                <a class="card-item__link" href="./inicio">
                   <picture class="card-item__cover">
                     <span class="card-item__tag">NUEVO</span>
                     <img
@@ -52,10 +52,11 @@
                     />
                   </picture>
                   <div class="card-item__content">
-                    <p class="card-item__license">STAR WARS</p>
-                    <h4 class="card-item__name">STORMTROOPER LIGHT SABER</h4>
-                    <p class="card-item__price">$1799.99</p>
-                    <p class="card-item__promo">3 CUOTAS SIN INTERES</p>
+                    <p class="card-item__license"><%= item.license_name %></p>
+                    <h4 class="card-item__name"><%= item.product_name %></h4>
+                    <p class="item_description"><%= item.product_description %></p>
+                    <p class="card-item__price">$ <%= item.product_price %>.-</p>
+                    
                   </div>
                 </a>
               </article>
@@ -63,7 +64,7 @@
 
             <li class="slider__item glide__slide">
               <article class="card-item">
-                <a class="card-item__link" href="./item.html">
+                <a class="card-item__link" href="./item">
                   <picture class="card-item__cover">
                     <span class="card-item__tag">NUEVO</span>
                     <img
@@ -89,7 +90,7 @@
 
             <li class="slider__item glide__slide">
               <article class="card-item">
-                <a class="card-item__link" href="./item.html">
+                <a class="card-item__link" href="./item">
                   <picture class="card-item__cover">
                     <span class="card-item__tag">NUEVO</span>
                     <img
