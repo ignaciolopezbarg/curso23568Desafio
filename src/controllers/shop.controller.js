@@ -111,7 +111,7 @@
 
 // ];
 const path = require("path");
-const data = 
+const json = 
 [
     {   
         product_id: "1",
@@ -287,12 +287,13 @@ module.exports = {
 
   item: async (req, res) => {
     const itemId = req.params.id;
-    const item = data.find(item => item.product_id == itemId);
+    const [ item ] = await getOne(itemId);
+
     const indice1 = Math.floor(Math.random() * data.length);
     const indice2 = Math.floor(Math.random() * data.length);
     const indice3 = Math.floor(Math.random() * data.length);
 
-    const itemsGlide = [ data[indice1], data[indice2],data[indice3]]
+    const itemsGlide = [ json[indice1], json[indice2],json[indice3]]
     console.log(item)
     console.log(__dirname)
     res.render(path.resolve(__dirname, "../views/shop/item.ejs"), {
