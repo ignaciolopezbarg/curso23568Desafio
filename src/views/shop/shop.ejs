@@ -77,18 +77,18 @@
                <ul class ="shop__items">
                 <% data.forEach (item =>{ %>
                     <li class="shop__item">
-                 <article class="card-item">
+                  <article class="card-item">
                     <a  class= "card-item__link"  href="/shop/item/<%= item.product_id %>">
                             <picture class="card-item__cover">
                                 <span class="card-item__tag">Nuevo</span>
-                                <img class="card-item__img--front" src= "<%= item.img_front  %>" alt="imagen">
-                                <img class="card-item__img--back" src="<%= item.img_back %>" alt="imagen en caja">
+                                <img class="card-item__img--front" src= "img/<%= item.img_front  %>" alt="imagen">
+                                <img class="card-item__img--back" src="img/<%= item.img_back %>" alt="imagen en caja">
                             </picture>
                          <div class="card-item__content">
                               <p class="card-item__licence"><%= item.category_name %></p>
                               <h4 class="card-item__name"><%= item.product_name %></h4>
-                              <p class="card-item__price">$ <%= item.product_price %>.-</p>
-                              <p class="card-item__promo"> CUOTAS SIN INTERES <%= item.dues %></p>
+                              <p class="card-item__price">$ <%= item.price %>.-</p>
+                              <p class="card-item__promo">  <%= item.dues %> CUOTAS SIN INTERES</p>
                          </div>
                     </a>
                  </article>
