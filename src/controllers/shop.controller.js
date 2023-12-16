@@ -1,5 +1,6 @@
 
 const path = require("path");
+const { getAll, getOne } = require("../models/product.model");
 const json = 
 [
     {   
