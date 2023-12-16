@@ -1,179 +1,288 @@
-:root {
-    /* paleta de colores */
-    --primary-solid: rgb(255, 51, 51);
-    --primary-900: rgb(255, 51, 51, 0.9);
-    --primary-500: rgb(255, 51, 51, 0.5);
-    --primary-300: rgb(255, 51, 51, 0.3);
-
-    --secondary-solid: rgb(29, 132, 181);
-    --secondary-900: rgb(29, 132, 181, 0.9);
-    --secondary-500: rgb(29, 132, 181, 0.5);
-    --secondary-300: rgb(29, 132, 181, 0.3);
-
-    --dark-solid: rgb(31, 31, 31);
-    --dark-900: rgb(31, 31, 31, 0.9);
-    --dark-500: rgb(31, 31, 31, 0.5);
-    --dark-300: rgb(31, 31, 31, 0.3);
-
-    /* background oscuro y claro: */
-    --dark-bg--solid: #30343f;
-    --light-bg-solid: #fafaff;
-    --light-font-solid: #ffffff;
-
-    /* tipografias: */
-    --base-font: Arial, Helvetica, sans-serif;
-    --alternative-font: Verdana, Geneva, Tahoma, sans-serif;
-
-    /* font-size */
-    --font-display: 4.6em;
-    --font-jumbo: 3.8em;
-    --font-xlarge: 3em;
-    --font-large: 2.4em;
-    --font-medium: 1.8em;
-    --font-small: 1.6em;
-    --font-xsmall: 1.4em;
-
-    /* spacing */
-    --spacing-128: 12.8rem;
-    --spacing-68: 6.8rem;
-    --spacing-36: 3.6rem;
-    --spacing-28: 2.8rem;
-    --spacing-24: 2.4rem;
-    --spacing-20: 2rem;
-    --spacing-16: 1.6rem;
-    --spacing-12: 1.2rem;
-    --spacing-8: 0.8rem;
+@font-face {
+    font-family: 'raleway';
+    src: url(/public/fonts/Raleway-VariableFont_wght.ttf);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@font-face {
+    font-family: 'inter';
+    src: url(/public/fonts/Inter-VariableFont_slnt\,wght.ttf);
 }
 
+:root{
 
-html {
-    font-family: var(--base-font);
-    font-size: 62.5%;
-    color: var(--dark-solid);
+    /* COLORES */
+    --color-red: #FF3333;
+    --color-light-red: rgba(255,51,51,0.5);
+
+    --color-blue: #1D84B5;
+    --color-light-blue: rgb(29, 132, 181,0.7);
+
+    --color-dark-bg: #30343F;
+    --color-gray: rgb(79, 79, 79,0.8);
+    --color-light-gray: rgb(79, 79, 79,0.4);
+
+    --color-dark: #1F1F1F;
+    --color-light-dark: rgb(31, 31, 31,0.8);
+
+    --light-font: #FFFFFF;
+    --light-bg: #FAFAFF;
+
+    /* TIPOGRAFIA */
+    --font-base: 'Inter', sans-serif;
+    --alternative-font: 'Raleway', sans-serif;
+
 }
 
-a {
-    text-decoration:none;
-    font-family: inherit;
-    color: inherit;
-}
+/* 
+%%%%%%%%%%%%%%%%
+%%%%%HEADER%%%%% -> PROVISIONAL
+%%%%%%%%%%%%%%%%
+*/
 
-header,
-footer {
-    font-family: var(--alternative-font);
-    color: var(--light-font-solid);
-}
-
-ul,
-li {
-    list-style-type: none;
-    color: white;
-}
-
-p {
-    font-size: 1.8em;
-}
-
-/* fijo el width que se referira siempre a la etiqueta del padre */
-img {
+ img{
     width: 100%;
 }
 
-/* limitamos el ancho del contenedor de la pagina a 1200px, que es lo maximo que crecera aun en resoluciones mayores */
-.container {
-    max-width: 1200px;
+.header{
+    border: 1px solid black;
+    background-color: var(--color-dark-bg);
+    padding: 10px;
+}
+
+.container{
+    max-width: 75rem;
     margin: 0 auto;
 }
 
-/* header */
-header {
-    background-color: var(--dark-bg--solid);
-    padding: var(--spacing-36);
-    position: relative;
-}
 
-.nabvar {
+.navbar{
+    background-color: var(--color-dark-bg);
+    font-family: var(--font-base);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
-.nabvar__logo {
-    max-width: 300px;
-}
-
-.nabvar__menu {
+.navbar__list{
+    list-style: none;
     display: flex;
     align-items: center;
-    gap: var(--spacing-36);
+    gap: 20px;
 }
-
-
-
-.nabvar__link {
-    font-size: var(--font-medium);
-    padding: var(--spacing-8) var(--spacing-16);
+.navbar__icon{
+    color: var(--light-font);
+}
+.navbar__link{
+    color: var(--light-font);
+    font-size: 14px;
+    text-decoration: none;
+    padding: 10px;
     display: inline-block;
     position: relative;
-    /* transition: background .3s ease-in-out;  */
+}
+/* .navbar__item:nth-child(4){
+    border: 3px solid black;
+    position: relative;
+} */
+.navbar__link--icon{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.navbar__link:hover{
+    color: #BCBCBC;
+    /* background-color: #505050; */
+}
+.navbar__link:hover .icon-animation{
+    transform: rotate(90deg);
+    transition: transform .3s;
 }
 
-
-.nabvar__link:hover {
-    background-color: red;
+.navbar__item-cart{
+    background-color: var(--color-red);
+    padding: 5px;
+    border-radius: 4px;
+    position: absolute;
+    top: -15px;
+}
+.submenu{
+    display: none;
+    position: absolute;
+    background-color: var(--color-dark-bg);
+    font-size: 13px;
+    list-style: none;
+    padding: 0px;
+    z-index: 50;
+}
+.navbar__item--with-submenu:hover .submenu{
+    display: block;
+}
+.submenu__link{
+    text-decoration: none;
+    color: var(--light-font);
+    display: block;
+    padding: 8px;
+    margin-right: 50px;
+}
+.submenu__link:hover{
+    color: #BCBCBC;
 }
 
-
-.navbar a:hover {
-    color: #f340cc;
-    /* Cambio de color al poner el cursor */
+.container-shadow{
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(148,148,148,0.58);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(148,148,148,0.58);
+    box-shadow: 0px 0px 5px 3px rgba(148,148,148,0.58);
 }
 
-.container {
-    width: 400px;
-    padding: 28px;
-    background-color: white;
-    margin: 0 auto;
-    margin-top: 100px;
+.main{
+    height: 100vh;
+}
+.formulario {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 5px;
+    padding: 15px;
+    height: 100vh;
+    /* border: 12px solid red; */
+    /* gap: 30px; */
+}
+.formulario__title{
+    font-size: 80px;
+    font-family: sans-serif;
+    font-weight: bold;
+    /* border: 2px solid black; */
     
-    font-size: 24px;
 }
-/* formulario */
+.formulario__description{
+    /* border: 2px solid black; */
+    font-size: 30px;
+    font-family: var(--alternative-font);
+    
+}
+.formulario__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    /* border: 2px solid black; */
+    font-size: 30px;
+    margin: 20px;
+    width: 50%;
 
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 24px;
-    margin: 5px 0 22px 0;
+}
+.formulario__container div:nth-child(6){
+    /* border: 2px solid black; */
+    margin-top: 20px;
+}
+.formulario__item-text{
+    font-family: var(--font-base);
+    font-weight: 400;
+    text-align: left;
+    /* border: 2px solid violet; */
+    min-width: 300px;
+}
+.formulario__item{
+    /* border: 6px solid black; */
     border: none;
-    background: #f1f1f1;
+    border-bottom: 1px solid var(--color-red);
+    font-family: var(--alternative-font);
+    font-size: large;
+    width: 300px;
+    height: 40px;
+    padding: 5px;
+    margin-bottom: 20px;
+    min-width: 420px;
 }
 
-input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
+.formulario__item:focus{
     outline: none;
+    border-bottom: 3px solid red;
 }
 
-.btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px 20px;
-    border: none;
+.formulario__btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.formulario__condiciones-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid black; */
+    padding: 10px;
+    gap: 5px;
+}
+.formulario__btn{
+    font-family: var(--font-base);
+    font-weight: 500;
+    width: 150px;
+    padding: 15px;
+    border-radius: 20px;
     cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
+    color: #fff;
+    background-color: rgb(211, 49, 49);
+    
+}
+.formulario__btn:active{
+    background-color: rgb(255, 0, 0);
+
+}
+.formulario__btn-check{
+    width: 20px;
+    height: 20px;
+    /* border: 2px solid black; */
+}
+.formulario__condiciones-text{
+    font-family: var(--font-base);
+    font-size: medium;
+    margin: 0px;
+    /* border: 2px solid black; */
+}
+.formulario__condiciones-text-blue{
+    color: rgb(0, 132, 255);
 }
 
-.btn:hover {
-    opacity:1;
+
+
+
+
+
+
+
+.footer{
+    background-color: var(--color-dark-bg);
 }
 
-/* footer */
+.footer__container{
+    background-color: var(--color-dark-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 240px;
+}
+
+.footer__list{
+    display: block;
+    padding: 15px;
+}
+
+.footer__item{
+    list-style: none;
+}
+
+.footer__rights{
+    padding: 6px;
+    align-self: flex-end;
+}
+
+.footer__text{
+    color: var(--light-font);
+}
+/* 
 .footer {
     max-width: 100%;
     background-color: #333;
@@ -186,7 +295,7 @@ input[type=text]:focus, input[type=password]:focus {
 
     display: flex;
 
-    justify-content: space-around;
+    justify-content: space-between;
 
     align-items: center;
     clear: none;
@@ -204,7 +313,7 @@ input[type=text]:focus, input[type=password]:focus {
 
 .footer ul li {
 
-    display: inline-block;
+    display: inline;
 
     margin: 0 10px;
 
@@ -221,7 +330,35 @@ input[type=text]:focus, input[type=password]:focus {
 
 
 .footer ul li a:hover {
-
     text-decoration: underline;
-
 }
+
+.container{
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+
+
+.pie-pagina {
+    background-color: #1D1A2F;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pie-pagina ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+.contacto {
+    font-size: 2rem;
+}
+
+.pago {
+    font-size: 2rem;
+} */

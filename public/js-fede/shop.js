@@ -24,6 +24,7 @@ function generarShop(){
             </article>
         </div>
         `
+        console.log(shop.innerHTML)
     }).join(""));
 
 }

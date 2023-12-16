@@ -1,26 +1,41 @@
-function validateForm() {
-    var form = $(this);
+/*========VALIDANDO DATOS DEL FORMULARIO DE REGISTRO=== */
 
-    var fname = form.find("#fname").val();
-    var email = form.find("#email").val();
-    var psw = form.find("#psw").val();
-    var pswRepeat = form.find("#psw-repeat").val();
+document.getElementById("formulario").addEventListener("submit", (event) => {
+    event.preventDefault();
 
-    // Realiza las validaciones necesarias aquí.
-    // Por ejemplo, puedes validar que los campos no estén vacíos.
-    if (fname === "" || email === "" || psw === "" || pswRepeat === "") {
-        alert("Todos los campos deben estar llenos.");
-        return false;
-    }
+    
 
-    // También puedes validar que el correo electrónico tenga el formato correcto.
-    var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    if (!regexEmail.test(email)) {
-        alert("Por favor, ingresa un correo electrónico válido.");
-        return false;
-    }
+  let emailIngresado = document.getElementById("email");
+  let emailError = document.getElementById("emailError");
+  let formatoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expresión regular de un formato de email
 
-    // Aquí puedes agregar más validaciones según lo que necesites.
+  if (!formatoEmail.test(emailIngresado.value)) {
+    emailError.textContent = "Por favor, ingresá un email válido";
+    emailError.classList.add("error-message");
+  } else {
+    emailError.textContent = "";
+    emailError.classList.remove("error-message");
+  }
+  let contrasenaEnter = document.getElementById("password");
+  let contrasenaError = document.getElementById("passwordError");
+  let contrasenaPatron =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$/;
 
-    return true;
-}
+  if (!contrasenaPatron.test(contrasenaEnter.value)) {
+    contrasenaError.textContent =
+      "La contraseña debe tener al menos 8 caracteres, números, mayúsculas y minúsculas y caracteres especiales";
+    contrasenaError.classList.add("error-message");
+  } else {
+    contrasenaError.textContent = "";
+    contrasenaError.classList.remove("error-message");
+  }
+
+  if (
+    
+    !emailError.textContent &&
+    !contrasenaError.textContent
+  ) {
+    alert("REGISTRO EXITOSO! BIENVENID@ A NUESTRA TIENDA");
+    document.getElementById("formulario").reset(); //Para que se limpien los campos una vez enviado
+  }
+});

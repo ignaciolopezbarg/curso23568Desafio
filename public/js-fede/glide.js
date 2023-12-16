@@ -6,29 +6,32 @@ document.addEventListener("DOMContentLoaded", function () {
     gap: 30,
     breakpoints: {
       991: {
-        perView: 2,
+        perView: 3,
       },
-      768: {
-        perView: 3, // Corregí aquí "perview" a "perView"
+      786: {
+        perView: 2, // Corregí aquí "perview" a "perView"
       },
+      480: {
+        perView: 1,
+      }
     },
   }).mount();
 
   // Agregar eventos de clic a las imágenes del carrusel
-  var images = document.querySelectorAll(".card-item__img--front");
-  var itemInfoImage = document.querySelector(".item__card-front");
+  // var images = document.querySelectorAll(".card-item__img--front");
+  // var itemInfoImage = document.querySelector(".item__card-front");
 
-  images.forEach(function (image, index) {
-    image.addEventListener("click", function () {
-      // Obtener la URL de la imagen clickeada
-      var imageUrl = image.getAttribute("src");
+  // images.forEach(function (image, index) {
+  //   image.addEventListener("click", function () {
+  //     // Obtener la URL de la imagen clickeada
+  //     var imageUrl = image.getAttribute("src");
 
-      // Mostrar la imagen en el área de información del artículo
-      itemInfoImage.setAttribute("src", imageUrl);
+  //     // Mostrar la imagen en el área de información del artículo
+  //     itemInfoImage.setAttribute("src", imageUrl);
 
-      // Cambiar al elemento correspondiente en el carrusel
-      glide.go(`=${index}`);
-    });
-  });
+  //     // Cambiar al elemento correspondiente en el carrusel
+  //     glide.go(`=${index}`);
+  //   });
+  // });
 });
 
