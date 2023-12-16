@@ -10,7 +10,7 @@ const shopRoutes = require("./src/routes/shop.routes.js");
 const adminRoutes = require("./src/routes/admin.routes.js");
 const authRoutes = require("./src/routes/auth.routes.js");
 
-const PORT = 409 || 3306;
+const PORT = 4000 || 3306;
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./src/views"));
