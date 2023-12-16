@@ -26,7 +26,7 @@
 <%- include('../partials/header') %>
 
     <main class="container">
-      <!-- Seccion con el Baby Yoda BLUEBALL -->
+      
       <section class="item">
 
         <picture class="item__card">
@@ -72,6 +72,7 @@
                     <span class="card-item__tag">NUEVO</span>
                     <img
                       class="card-item__img--front"
+<<<<<<< HEAD
                       src="/<%=itemsGlide[0].img_front%>"
                       alt="<%=itemsGlide[0].product_description%>"
                     />
@@ -81,6 +82,24 @@
                       alt="<%=itemsGlide[0].product_description%>"
                     />
                   </picture>
+=======
+                      src="/img/multimedia<%= item.img_front  %>"
+                      alt="Figura coleccionable Funko de un StormTrooper"
+                    />
+                    <img
+                      class="card-item__img--back"
+                      src="/img/multimedia <%= item.img_back %>"
+                      alt="Figura coleccionable Funko de un StormTrooper en caja"
+                    />
+                  </picture>
+                  <div class="card-item__content">
+                    <p class="card-item__license"><%= item.license_name %></p>
+                    <h4 class="card-item__name"><%= item.product_name %></h4>
+                    <p class="item_description"><%= item.product_description %></p>
+                    <p class="card-item__price">$ <%= item.price %>.-</p>
+                    
+                  </div>
+>>>>>>> 568af86eacce92f9ff243dcf0196fc49163e5984
                 </a>
               </article>
             </li>

@@ -273,8 +273,11 @@ const data =
     }
 ]
 module.exports = {
-  shop: (req, res) => {
-    
+  shop: async (req, res) => {
+    const data = await getAll();
+
+    //console.log(dbdata);
+
     res.render(path.resolve(__dirname, "../views/shop/shop.ejs"), {
       title: "Tienda",
       data,
@@ -282,7 +285,7 @@ module.exports = {
     console.log(__dirname)
   },
 
-  item: (req, res) => {
+  item: async (req, res) => {
     const itemId = req.params.id;
     const item = data.find(item => item.product_id == itemId);
     const indice1 = Math.floor(Math.random() * data.length);
