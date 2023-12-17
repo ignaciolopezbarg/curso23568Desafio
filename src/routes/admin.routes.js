@@ -10,12 +10,11 @@ const {
   deleteItem,
 } = require("../controllers/admin.controller.js");
 
- router.get('/',admin);
- router.get('/create',createView);
- router.post ('/create',createItem);
- router.get('/edit/:id',editView);
- router.get('/edit/:id',editItem);
- router.put('/edit/:id',editItem);
+router.get('/',admin);
+router.get('/create',createView);
+router.post ('/create',createItem);
+router.get('/edit/:id',editView);
+router.put('/edit/:id',editItem);
 router.delete("/delete/:id",deleteItem);
 
 module.exports = router;

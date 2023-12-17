@@ -30,14 +30,14 @@
       <section class="item">
 
         <picture class="item__card">
-          <img class="item__card-front" src="/<%=item.img_front%>" alt="<%=item.product_description%>"/>
-          <img class="item__card-back" src="/<%=item.img_back%>" alt="<%=item.product_description%>"/>
+          <img class="item__card-front" src="/img/multimedia/<%=item.image_front%>" alt="<%=item.product_description%>"/>
+          <img class="item__card-back" src="/img/multimedia/<%=item.image_back%>" alt="<%=item.product_description%>"/>
         </picture>
         <article class="item__info">
           <p class="item__info--license"><%= item.category_name %></p>
           <h3 class="item__info--name"><%= item.product_name %></h3>
           <p class="item__info--description"><%= item.product_description%></p>
-          <p class="item__info--price">$ <%= item.product_price %></p>
+          <p class="item__info--price">$ <%= item.price %></p>
           <div class="item__cart">
             <div>
               <button id="subtract" class="item__quantity" type="button">-</button>
@@ -65,41 +65,22 @@
                   <div class="card-item__content">
                     <p class="card-item__license"><%=itemsGlide[0].category_name%></p>
                     <h4 class="card-item__name"><%=itemsGlide[0].product_name%></h4>
-                    <p class="card-item__price">$<%=itemsGlide[0].product_price%></p>
+                    <p class="card-item__price">$<%=itemsGlide[0].price%></p>
                     <p class="card-item__promo"><%=itemsGlide[0].dues%> CUOTAS SIN INTERES</p>
                   </div>
                   <picture class="card-item__cover">
                     <span class="card-item__tag">NUEVO</span>
                     <img
                       class="card-item__img--front"
-<<<<<<< HEAD
-                      src="/<%=itemsGlide[0].img_front%>"
+                      src="/img/multimedia/<%=itemsGlide[0].image_front%>"
                       alt="<%=itemsGlide[0].product_description%>"
                     />
                     <img
                       class="card-item__img--back"
-                      src="/<%=itemsGlide[0].img_back%>"
+                      src="/img/multimedia/<%=itemsGlide[0].image_back%>"
                       alt="<%=itemsGlide[0].product_description%>"
                     />
                   </picture>
-=======
-                      src="/img/multimedia<%= item.img_front  %>"
-                      alt="Figura coleccionable Funko de un StormTrooper"
-                    />
-                    <img
-                      class="card-item__img--back"
-                      src="/img/multimedia <%= item.img_back %>"
-                      alt="Figura coleccionable Funko de un StormTrooper en caja"
-                    />
-                  </picture>
-                  <div class="card-item__content">
-                    <p class="card-item__license"><%= item.license_name %></p>
-                    <h4 class="card-item__name"><%= item.product_name %></h4>
-                    <p class="item_description"><%= item.product_description %></p>
-                    <p class="card-item__price">$ <%= item.price %>.-</p>
-                    
-                  </div>
->>>>>>> 568af86eacce92f9ff243dcf0196fc49163e5984
                 </a>
               </article>
             </li>
@@ -110,19 +91,19 @@
                   <div class="card-item__content">
                     <p class="card-item__license"><%=itemsGlide[1].category_name%></p>
                     <h4 class="card-item__name"><%=itemsGlide[1].product_name%></h4>
-                    <p class="card-item__price">$<%=itemsGlide[1].product_price%></p>
+                    <p class="card-item__price">$<%=itemsGlide[1].price%></p>
                     <p class="card-item__promo"><%=itemsGlide[0].dues%> CUOTAS SIN INTERES</p>
                   </div>
                   <picture class="card-item__cover">
                     <span class="card-item__tag">NUEVO</span>
                     <img
                       class="card-item__img--front"
-                      src="/<%=itemsGlide[1].img_front%>"
+                      src="/img/multimedia/<%=itemsGlide[1].image_front%>"
                       alt="<%=itemsGlide[1].product_description%>"
                     />
                     <img
                       class="card-item__img--back"
-                      src="/<%=itemsGlide[1].img_back%>"
+                      src="/img/multimedia/<%=itemsGlide[1].image_back%>"
                       alt="<%=itemsGlide[1].product_description%>"
                     />
                   </picture>
@@ -136,19 +117,19 @@
                   <div class="card-item__content">
                     <p class="card-item__license"><%=itemsGlide[2].category_name%></p>
                     <h4 class="card-item__name"><%=itemsGlide[2].product_name%></h4>
-                    <p class="card-item__price">$<%=itemsGlide[2].product_price%></p>
+                    <p class="card-item__price">$<%=itemsGlide[2].price%></p>
                     <p class="card-item__promo"><%=itemsGlide[2].dues%> CUOTAS SIN INTERES</p>
                   </div>
                   <picture class="card-item__cover">
                     <span class="card-item__tag">NUEVO</span>
                     <img
                       class="card-item__img--front"
-                      src="/<%=itemsGlide[2].img_back%>"
+                      src="/img/multimedia/<%=itemsGlide[2].image_back%>"
                       alt="<%=itemsGlide[2].product_description%>"
                     />
                     <img
                       class="card-item__img--back"
-                      src="/<%=itemsGlide[2].img_back%>"
+                      src="/img/multimedia/<%=itemsGlide[2].image_back%>"
                       alt="<%=itemsGlide[2].product_description%>"
                     />
                   </picture>
@@ -174,9 +155,7 @@
   <script src="https://kit.fontawesome.com/d82e4588df.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
-    <!-- <script src="../../js-fede/item-generator.js"></script>
-    <script src="../../js-fede/productsData.js"></script> -->
-    <!-- <script src="../../js-fede/item.js"></script> -->
+    <script src="../../js-fede/item.js"></script>
     <!-- hay que agregar este nuevo script para que funcione glide: -->
     <!-- <script src="/public/js-fede/item-glide-functions.js"></script> -->
     <script src="/js-fede/glide.js"></script>

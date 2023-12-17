@@ -68,7 +68,11 @@ html {
   /*62.5=10px=1em Normalizamos a 10px el estandar del navegador,Con esto le decimos al navegador que en lugar del estandar sea 16px quede en 10px pero en porcentaje para no complicar, 16px =1em buena practica usar em para textos y rem*/
   color: var(--dark-solid);
 }
-
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -77,11 +81,7 @@ a {
   /*Para que los enlces que estan dentro de un header o footer tengan fuente Raleway y los que estan fuera tengan fuente Inter, los enlaces heredan de sus etiquetas padres el tipo de fuente*/
 }
 
-header,
-footer {
-  font-family: var(--alternative-font);
-  color: var(--light-font-solid);
-}
+
 
 ul,
 ol {
@@ -97,130 +97,127 @@ img {
   width: 100%;
   /*asi Siempre tendra el 100%del ancho de su contenedor padre que es picture*/
 }
-
+.header {
+  background-color: var(--dark-bg-solid);
+  padding: 10px;
+}
 .container {
   /*Esto hará que el contenido quede centrado y con un ancho fijo y los elementos en una misma linea vertical*/
   max-width: 1200px;
   margin: 0 auto;
+  flex: 1;
 }
 
 
-.header{
-    background-color: var(--dark-bg-solid);
-    padding: 10px;
+header {
+  background-color: var(--dark-bg-solid);
+  padding: var(--spacing-36);
 }
 
 .navbar{
-    background-color: var(--dark-bg-solid);
-    font-family: var(--font-base);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  background-color: var(--color-dark-bg);
+  font-family: var(--font-base);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .navbar__list{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 .navbar__icon{
-    color: var(--light-font);
+  color: var(--light-font);
 }
 .navbar__link{
-    color: var(--light-font);
-    font-size: 14px;
-    text-decoration: none;
-    padding: 10px;
-    display: inline-block;
-    position: relative;
+  color: var(--light-font-solid);
+  font-size: 14px;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+  position: relative;
 }
 /* .navbar__item:nth-child(4){
-    border: 3px solid black;
-    position: relative;
+  border: 3px solid black;
+  position: relative;
 } */
 .navbar__link--icon{
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 .navbar__link:hover{
-    color: #BCBCBC;
-    /* background-color: #505050; */
+  color: #BCBCBC;
+  /* background-color: #505050; */
 }
 .navbar__link:hover .icon-animation{
-    transform: rotate(90deg);
-    transition: transform .3s;
+  transform: rotate(90deg);
+  transition: transform .3s;
 }
 
 .navbar__item-cart{
-    background-color: var(--primary-900);
-    padding: 5px;
-    border-radius: 4px;
-    position: absolute;
-    top: -15px;
+  background-color: var(--primary-900);
+  padding: 5px;
+  border-radius: 4px;
+  position: absolute;
+  top: -15px;
 }
 .submenu{
-    display: none;
-    position: absolute;
-    background-color: var(--dark-bg-solid);
-    font-size: 13px;
-    list-style: none;
-    padding: 0px;
-    z-index: 50;
+  display: none;
+  position: absolute;
+  background-color: var(--dark-bg-solid);
+  font-size: 13px;
+  list-style: none;
+  padding: 0px;
+  z-index: 50;
 }
 .navbar__item--with-submenu:hover .submenu{
-    display: block;
+  display: block;
 }
 .submenu__link{
-    text-decoration: none;
-    color: var(--light-font);
-    display: block;
-    padding: 8px;
-    margin-right: 50px;
+  text-decoration: none;
+  color: var(--light-font-solid);
+  display: block;
+  padding: 8px;
+  margin-right: 50px;
 }
 .submenu__link:hover{
-    color: #BCBCBC;
+  color: #BCBCBC;
 }
 
 
+.footer {
+  color: var(--light-font-solid);
+  background-color: var(--dark-bg-solid);
+  border-radius: 35px;
+  height: auto;
+}
+.footer__container {
+  background-color: var(--dark-bg-solid);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 240px;
+}
+.footer__list {
+  display: block;
 
-
-
-
-
-
-.footer{
-    /* border: 2px solid red; */
-    background-color: var(--dark-bg-solid);
-    bottom: 0;
-    width: 100%;
+  padding: 15px;
+}
+.footer__item {
+  list-style: none;
+}
+.footer__rights {
+  padding: 6px;
+  align-self: flex-end;
 }
 
-.footer__container{
-    background-color: var(--dark-bg-solid);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 240px;
-}
-
-.footer__list{
-    display: block;
-    padding: 15px;
-}
-
-.footer__item{
-    list-style: none;
-}
-
-.footer__rights{
-    padding: 6px;
-    align-self: flex-end;
-}
-
-.footer__text{
-    color: var(--light-font);
+.footer__text {
+  color: var(--light-font);
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /*ADMIN*/
@@ -243,7 +240,7 @@ img {
     height: 1.5em;
     font-size: 2.4em;
     margin-left: 0;
-    padding-left: 1em;
+    padding: 1em;
   }
   
   .table__title {

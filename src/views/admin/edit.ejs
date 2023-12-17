@@ -28,13 +28,13 @@
 <%- include('../partials/header') %>
 <main id="edit" class="container">
     <h2 class="edit__title">EDITAR ITEM</h2>
-    <form class="edit__form" action="/admin/edit/<%= item.product_id %>?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded">
+    <form class="edit__form" action="/admin/edit/<%= producto.product_id %>?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded">
         <div class="form__flex">
             <div class="form__box--flex">
                  <label class="form__label" for="category">Categoría:</label>
                  <select class="form__select" name="category" id="category" required>
                       <% categories.forEach((category, i) => { %>
-                          <option <% if (item.category_id === i +1) { %>selected<% } %> value="<%= i+1%>"><%= category.category_name%></option>
+                          <option <% if (producto.category_id === i +1) { %>selected<% } %> value="<%= i+1%>"><%= category.category_name%></option>
                       <% }); %>
                  </select>
             </div>
@@ -42,26 +42,26 @@
                 <label class="form__label" for="collection">Licencia:</label>
                 <select class="form__select" name="collection" id="collection" required>
                       <% licences.forEach((licence, i) => { %>
-                          <option <% if (item.licence_id === i +1) { %>selected<% } %> value="<%= i+1%>"><%= licence.licence_name%></option>
+                          <option <% if (producto.licence_id === i +1) { %>selected<% } %> value="<%= i+1%>"><%= licence.licence_name%></option>
                       <% }); %>
                 </select>
             </div>
         </div>
         <div class="form__box--flex">
             <label class="form__label" for="name">Nombre del producto:</label>
-            <input class="form__input" type="text" name="name" id="name" value="<%= item.product_name %>" required>
+            <input class="form__input" type="text" name="name" id="name" value="<%=producto.product_name%>" required>
         </div>
         <div>
-            <textarea name="description" id="description" cols="30" rows="6" required><%= item.product_description %></textarea>
+            <textarea name="description" id="description" cols="30" rows="6" required><%= producto.product_description %></textarea>
         </div>
         <div class="form__flex">
             <div class="form__box--flex">
                 <label class="form__label" for="sku">SKU:</label>
-                <input class="form__input" type="text" name="sku" id="sku" value="<%= item.sku %>" required>
+                <input class="form__input" type="text" name="sku" id="sku" value="<%= producto.sku %>" required>
             </div>
             <div class="form__box--flex">
                 <label class="form__label" for="price">Precio:</label>
-                <div class="form__input--wrapper"><span>$</span><input class="form__input" type="text" name="price" id="price" data-type="currency" value="<%= item.price %>"></div>
+                <div class="form__input--wrapper"><span>$</span><input class="form__input" type="text" name="price" id="price" data-type="currency" value="<%= producto.price %>"></div>
             </div>
             <div class="form__box--flex">
                 <label class="form__label" for="stock">Stock:</label>
@@ -92,11 +92,11 @@
         </div>
         <div class="form__box--flex">
             <div class="edit__img">
-                <img src="/img<%= item.image_front %>" alt="<%= item.product_name %>">
+                <img src="#" alt="<%= item.product_name %>">
                 <p class="edit__img-side">Frente</p>
             </div>
             <div class="edit__img">
-                <img src="/img<%= item.image_back %>" alt="<%= item.product_name %> en caja">
+                <img src="#" alt="<%= item.product_name %> en caja">
                 <p class="edit__img-side">Dorso</p>
             </div>
         </div>
@@ -111,7 +111,7 @@
  
     <script src="https://kit.fontawesome.com/d82e4588df.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script> 
-    <script src="../../js/edit-item.js"></script>
+    <!-- <script src="../../js/edit-item.js"></script> -->
 </body>
  
 </html>

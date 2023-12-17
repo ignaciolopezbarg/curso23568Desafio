@@ -5,7 +5,7 @@ const { conn } = require("../config/conn");
 //
 const getAll = async () => {
   try {
-    const [rows] = await conn.query("SELECT * FROM product;");
+    const [rows] = await conn.query("SELECT product.*, category.category_name, license.license_name FROM (product LEFT JOIN category ON product.category_id = category.category_id) LEFT JOIN license ON product.license_id = license.license_id" );
     return rows;
   } catch (error) {
     const e = {

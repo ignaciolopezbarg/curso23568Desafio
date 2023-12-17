@@ -165,38 +165,45 @@ const json =
 module.exports = {
   shop: async (req, res) => {
     const data = await getAll();
-
-    //console.log(dbdata);
-
+    
+    // console.log(data);
+    
     res.render(path.resolve(__dirname, "../views/shop/shop.ejs"), {
       title: "Tienda",
       data,
     });
-   console.log(__dirname)
   },
-
+  
   item: async (req, res) => {
     const itemId = req.params.id;
+    const data = await getAll();
     const [ item ] = await getOne(itemId);
 
+    // aca genero indice random del 0 al tamaño de la cantidad de productos de la DB
     const indice1 = Math.floor(Math.random() * data.length);
     const indice2 = Math.floor(Math.random() * data.length);
     const indice3 = Math.floor(Math.random() * data.length);
 
-    const itemsGlide = [ json[indice1], json[indice2],json[indice3]]
-    console.log(item)
-    console.log(__dirname)
+    // creo un array de 3 objetos para incluir en el glide 
+    const itemsGlide = [ data[indice1], data[indice2],data[indice3]]
+
     res.render(path.resolve(__dirname, "../views/shop/item.ejs"), {
       title: "Item",
       item,
       itemsGlide
     });
   },
+  
   addItem: (req, res) => {
     res.send("ruta para agregar nuevo item");
   },
+  
   cart: (req, res) => {
-    res.send("vista cart");
+
+    res.render(path.resolve(__dirname, "../views/shop/carrito.ejs"), {
+      title: "Carrito",
+    });
   },
+
   addToCart: (req, res) => res.send("ruta para agregar un item al carrito"),
 };

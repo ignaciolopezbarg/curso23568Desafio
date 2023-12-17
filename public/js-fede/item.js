@@ -4,36 +4,9 @@ const quantity = document.querySelector("#quantity");
 const cartElements= document.querySelector(".navbar__item-cart")
 const agregarBtn = document.querySelector(".item__agregate")
 
-const nombre = document.querySelector(".item__info--name").textContent;
-const categoria = document.querySelector(".item__info--license").textContent;
-const $precioElement = document.querySelector(".item__info--price")
-const precio = parseFloat($precioElement.textContent.replace(/[^\d,.]/g, '')); 
-const imagenFrontal = document.querySelector(".item__card-front") 
-const imagenTrasera = document.querySelector(".item__card-back") 
-const frontImg = imagenFrontal.getAttribute("src")
-const backImg = imagenFrontal.getAttribute("src")
-// se crea un objeto para guardar datos del item que despues se cargan en el localStorage
-const item = 
-{
-  items: cartElements.textContent,
-  nombre: nombre, 
-  categoria: categoria, 
-  precio: precio,
-  imgFront: frontImg,
-  imgBack: backImg
-};
 
-//guardo en una variable producto el objeto guardado en "data" del localStorage 
-let producto = JSON.parse(localStorage.getItem("data")) || { items: "0" };
 
-// condicion para ver si hay guardado en localStorage Items de ese producto (que se carga al apretar el boton agregar al carrito)
-if(producto.items){
-  cartElements.textContent = parseInt(producto.items) // pone el numero guardado de items en el cartel rojo del carrito
-  quantity.value = producto.items // pone el numero guardado de items en el input 
-}else{
-  cartElements.textContent = "0";
-}
-const productosEnCarrito = JSON.parse(localStorage.getItem("productosEnCarrito")) || [];
+
 document.addEventListener("DOMContentLoaded", function () {
   //funcionalidad de boton al apretar el +
   add.addEventListener("click", () => {
@@ -51,38 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
   //funcionalidad de boton al agregar producto
   agregarBtn.addEventListener("click", () => {
     if(quantity.value!=0){
-      if(!estaEnCarrito(productosEnCarrito)){
-        productosEnCarrito.push({
-          items: parseInt(quantity.value),
-          nombre: nombre,
-          categoria: categoria, 
-          precio: precio,
-          imgFront: frontImg,
-          imgBack: backImg
-        })
-        localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnCarrito));
-      }else{
-        agregarItemsAlProducto(productosEnCarrito)
-        console.log("articulo ya en carrito")
-      }
-      // console.log(product.nombre)
+      cartElements.textContent = parseInt(cartElements.textContent) + 1
     }
-    console.log('esta en carrito:', estaEnCarrito(productosEnCarrito))
   });
   
 });
-
-function estaEnCarrito(articulos){
-  return articulos.some( productoCarrito => productoCarrito.nombre === product.nombre);
-}
-
-function agregarItemsAlProducto(articulos){
-  let productoElegido = articulos.find((x) => {
-    return x.nombre == product.nombre
-  })
-
-  productoElegido.items = parseInt(quantity.value)
-  localStorage.setItem('productosEnCarrito', JSON.stringify(articulos));
-  // en esta funcion despues de que productoElegido tenga el objeto tengo q modificar la cantidad de items de ese producto
-  return productoElegido.items;
-}
