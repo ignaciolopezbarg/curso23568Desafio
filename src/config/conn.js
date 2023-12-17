@@ -3,7 +3,7 @@ const mysql = require('mysql2');
 //Creamos un pool de conexiones, en vez de una unica conexion, pues asi atendemos varias conexiones asincronas
 const pool = mysql.createPool({
     user: 'root',
-    password: '@Bocajuniors12',
+    password: '19791730',
     host: 'localhost',
     port: 3306 ,
     database: 'funko_g7',
