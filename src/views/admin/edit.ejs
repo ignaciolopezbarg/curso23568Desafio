@@ -42,7 +42,7 @@
                 <label class="form__label" for="collection">Licencia:</label>
                 <select class="form__select" name="collection" id="collection" required>
                       <% licences.forEach((licence, i) => { %>
-                          <option <% if (producto.licence_id === i +1) { %>selected<% } %> value="<%= i+1%>"><%= licence.licence_name%></option>
+                          <option <% if (producto.license_id === i +1) { %>selected<% } %> value="<%= i+1%>"><%= licence.license_name%></option>
                       <% }); %>
                 </select>
             </div>
@@ -65,24 +65,24 @@
             </div>
             <div class="form__box--flex">
                 <label class="form__label" for="stock">Stock:</label>
-                <div class="form__input--wrapper"><input class="form__input" type="text" name="stock" id="stock" value="<%= item.stock %>" required><span>unidades</span></div>
+                <div class="form__input--wrapper"><input class="form__input" type="text" name="stock" id="stock" value="<%= producto.stock %>" required><span>unidades</span></div>
             </div>
         </div>
         <div class="form__flex">
             <div class="form__box--flex">
                 <label class="form__label" for="discount">Descuento:</label>
-                <div class="form__input--wrapper"><input class="form__input" type="text" name="discount" id="discount" value="<%= item.discount %>" required><span>%</span></div>
+                <div class="form__input--wrapper"><input class="form__input" type="text" name="discount" id="discount" value="<%= producto.discount %>" required><span>%</span></div>
             </div>
             <div class="form__box--flex">
                 <label class="form__label" for="dues">Cuotas:</label>
                 <select class="form__select" name="dues" id="dues">
-                    <option <% if (item.dues === 0) { %>selected<% } %> value="0">Sin cuotas</option>
-                    <option <% if (item.dues === 3) { %>selected<% } %> value="3">3 cuotas s/ interés</option>
-                    <option <% if (item.dues === 6) { %>selected<% } %> value="6">6 cuotas s/ interés</option>
-                    <option <% if (item.dues === 9) { %>selected<% } %> value="9">9 cuotas s/ interés</option>
-                    <option <% if (item.dues === 12) { %>selected<% } %> value="12">12 cuotas s/ interés</option>
-                    <option <% if (item.dues === 18) { %>selected<% } %> value="18">18 cuotas s/ interés</option>
-                    <option <% if (item.dues === 24) { %>selected<% } %> value="24">24 cuotas s/ interés</option>
+                    <option <% if (producto.dues === 0) { %>selected<% } %> value="0">Sin cuotas</option>
+                    <option <% if (producto.dues === 3) { %>selected<% } %> value="3">3 cuotas s/ interés</option>
+                    <option <% if (producto.dues === 6) { %>selected<% } %> value="6">6 cuotas s/ interés</option>
+                    <option <% if (producto.dues === 9) { %>selected<% } %> value="9">9 cuotas s/ interés</option>
+                    <option <% if (producto.dues === 12) { %>selected<% } %> value="12">12 cuotas s/ interés</option>
+                    <option <% if (producto.dues === 18) { %>selected<% } %> value="18">18 cuotas s/ interés</option>
+                    <option <% if (producto.dues === 24) { %>selected<% } %> value="24">24 cuotas s/ interés</option>
                 </select>
             </div>
         </div>
@@ -92,11 +92,11 @@
         </div>
         <div class="form__box--flex">
             <div class="edit__img">
-                <img src="#" alt="<%= item.product_name %>">
+                <img src="/img/multimedia/<%=producto.image_front%>" alt="<%=producto.product_description %>">
                 <p class="edit__img-side">Frente</p>
             </div>
             <div class="edit__img">
-                <img src="#" alt="<%= item.product_name %> en caja">
+                <img src="/img/multimedia/<%=producto.image_back%>" alt="<%=producto.product_description%> en caja">
                 <p class="edit__img-side">Dorso</p>
             </div>
         </div>

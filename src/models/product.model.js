@@ -33,10 +33,39 @@ const getOne = async(id) => {
       }
 }
 
-
+const getCategories = async () => {
+  try {
+    const [categories] = await conn.query("SELECT * FROM category" );
+    return categories;
+  } catch (error) {
+    const e = {
+      isError: true,
+      message: `Error al consultar los datos : ${error}`,
+    };
+    return e;
+  } finally {
+    await conn.releaseConnection();
+  }
+}
+const getLicences = async () => {
+  try {
+    const [licences] = await conn.query("SELECT * FROM license" );
+    return licences;
+  } catch (error) {
+    const e = {
+      isError: true,
+      message: `Error al consultar los datos : ${error}`,
+    };
+    return e;
+  } finally {
+    await conn.releaseConnection();
+  }
+}
 
 
 module.exports = {
   getAll,
-  getOne
+  getOne,
+  getCategories,
+  getLicences
 };
