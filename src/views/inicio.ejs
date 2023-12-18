@@ -37,59 +37,38 @@
 
     <!-- seccion de las tres colecciones -->
     <main class="main container">
-      <section class="collection container">
-        <article class="collection__content">
-          <h3 class="collection__title">STARS WARS & THE MANDOLARIAN</h3>
-          <p class="collection__text">
-            Disfruta de una saga que sigue agregando personajes a tu coleccion
-          </p>
-          <a class="collection__link" href="/"
-            >VER COLECCION</a
-          >
-        </article>
-        <picture class="collection__cover">
-          <img
-            src="./img/multimedia/star-wars/baby-yoda-1.webp"
-            alt="Figura coleccionable de la serie The Mandolarian"
-          />
-        </picture>
-      </section>
+      <% licences.forEach( (licence,i) => { %>
+          <% if(i == 0 || i == 2){%>
+            <section class="collection container">
+              <article class="collection__content">
+                <h3 class="collection__title"> <%= licence.license_name %></h3>
+                <p class="collection__text"><%= licence.license_description %></p>
+                <a class="collection__link" href="/shop">VER COLECCION</a>
+              </article>
+              <picture class="collection__cover">
+                <img src="/img/multimedia/<%= licence.license_image %>" alt="Figura coleccionable de la serie The Mandolarian"/>
+              </picture>
+            </section>
 
-      <section class="collection container">
-        <picture class="collection__cover">
-          <img
-            src="./img/multimedia/pokemon/vulpix-1.webp"
-            alt="Figura coleccionable de la serie Pokemon"
-          />
-        </picture>
-        <article class="collection__content">
-          <h3 class="collection__title">POKEMON INDIGO</h3>
-          <p class="collection__text">
-            Atrapa a todos los que puedas y disfruta de una coleccion llena de
-            amigos
-          </p>
-          <a class="collection__link" href="/"
-            >VER COLECCION</a
-          >
-        </article>
-      </section>
-      <section class="collection container">
-        <article class="collection__content">
-          <h3 class="collection__title">HARRY POTTER</h3>
-          <p class="collection__text">
-            Revive los recuerdos de una saga llena de magia y encanto
-          </p>
-          <a class="collection__link" href=""
-            >VER COLECCION</a
-          >
-        </article>
-        <picture class="collection__cover">
-          <img
-            src="./img/multimedia/harry-potter/snape-patronus-1.webp"
-            alt="Figura coleccionable de la pelicula Harry Potter"
-          />
-        </picture>
-      </section>
+          <% }else{ %>
+            
+            <section class="collection container">
+             <picture class="collection__cover">
+               <img
+                 src="/img/multimedia/<%= licence.license_image %>"
+                 alt="Figura coleccionable de la serie Pokemon"
+               />
+             </picture>
+             <article class="collection__content">
+               <h3 class="collection__title"><%= licence.license_name %></h3>
+               <p class="collection__text"><%= licence.license_description %></p>
+               <a class="collection__link" href="/">VER COLECCION</a>
+             </article>
+            </section>
+
+           <%}%>
+          
+       <%})%>
       <!-- seccion correspondiente al slider -->
       <!-- agregamos la clase glide para poder usar la libreria -->
       <!-- la clase container es para limitar el ancho maximo a 1200px -->
@@ -98,84 +77,35 @@
         <!-- En la docu de la libreria nos pide agregar un nuevo div con la clase que se indica -->
         <div class="glide__track" data-glide-el="track">
           <ul class="slider__items glide__slides">
-            <li class="slider__item glide__slide">
-              <article class="card-item">
-                <!-- a este ultimo no seguimos con Bem, pues es una especie de tarjeta que se repite en las distintas paginas -->
-                <a class="card-item__link" href="">
-                  <div class="card-item__content">
-                    <p class="card-item__license">STAR WARS</p>
-                    <h4 class="card-item__name">STORMTROOPER LIGHT SABER</h4>
-                    <p class="card-item__price">$1799.99</p>
-                    <p class="card-item__promo">3 CUOTAS SIN INTERES</p>
-                  </div>
-                  <picture class="card-item__cover">
-                    <span class="card-item__tag">NUEVO</span>
-                    <img
-                      class="card-item__img--front"
-                      src="./img/multimedia/star-wars/trooper-1.webp"
-                      alt="Figura coleccionable Funko de un StormTrooper"
-                    />
-                    <img
-                      class="card-item__img--back"
-                      src="./img/multimedia/star-wars/trooper-box.webp"
-                      alt="Figura coleccionable Funko de un StormTrooper en caja"
-                    />
-                  </picture>
-                </a>
-              </article>
-            </li>
+            <% itemsRandom.forEach((item) => { %>
 
-            <li class="slider__item glide__slide">
-              <article class="card-item">
-                <a class="card-item__link" href="">
-                  <div class="card-item__content">
-                    <p class="card-item__license">POKEMON</p>
-                    <h4 class="card-item__name">PIDGEOTTO</h4>
-                    <p class="card-item__price">$1799.99</p>
-                    <p class="card-item__promo">3 CUOTAS SIN INTERES</p>
-                  </div>
-                  <picture class="card-item__cover">
-                    <span class="card-item__tag">NUEVO</span>
-                    <img
-                      class="card-item__img--front"
-                      src="./img/multimedia/pokemon/pidgeotto-1.webp"
-                      alt="Figura coleccionable Funko de un Pidgeotto"
-                    />
-                    <img
-                      class="card-item__img--back"
-                      src="./img/multimedia/pokemon/pidgeotto-box.webp"
-                      alt="Figura coleccionable Funko de un Pidgeotto en caja"
-                    />
-                  </picture>
-                </a>
-              </article>
-            </li>
-
-            <li class="slider__item glide__slide">
-              <article class="card-item">
-                <a class="card-item__link" href="/">
-                  <div class="card-item__content">
-                    <p class="card-item__license">HARRY POTTER</p>
-                    <h4 class="card-item__name">LUNA LOVEGOOD LION MASK</h4>
-                    <p class="card-item__price">$1799.99</p>
-                    <p class="card-item__promo">3 CUOTAS SIN INTERES</p>
-                  </div>
-                  <picture class="card-item__cover">
-                    <span class="card-item__tag">NUEVO</span>
-                    <img
-                      class="card-item__img--front"
-                      src="./img/multimedia/harry-potter/luna-1.webp"
-                      alt="Figura coleccionable Funko de un Luna Lovegood"
-                    />
-                    <img
-                      class="card-item__img--back"
-                      src="./img/multimedia/harry-potter/luna-box.webp"
-                      alt="Figura coleccionable Funko de un Luna Lovegood en caja"
-                    />
-                  </picture>
-                </a>
-              </article>
-            </li>
+              <li class="slider__item glide__slide">
+                <article class="card-item">
+                  <!-- a este ultimo no seguimos con Bem, pues es una especie de tarjeta que se repite en las distintas paginas -->
+                  <a class="card-item__link" href="/shop/item/<%= item.product_id %>">
+                    <div class="card-item__content">
+                      <p class="card-item__license">STAR WARS</p>
+                      <h4 class="card-item__name"><%= item.product_name %></h4>
+                      <p class="card-item__price">$<%= item.price %></p>
+                      <p class="card-item__promo">3 CUOTAS SIN INTERES</p>
+                    </div>
+                    <picture class="card-item__cover">
+                      <span class="card-item__tag">NUEVO</span>
+                      <img
+                        class="card-item__img--front"
+                        src="/img/multimedia/<%=item.image_front %>"
+                        alt="<%= item.product_description %>"
+                      />
+                      <img
+                        class="card-item__img--back"
+                        src="/img/multimedia/<%=item.image_back %>""
+                        alt="<%= item.product_description %>"
+                      />
+                    </picture>
+                  </a>
+                </article>
+              </li>
+            <%}) %>
           </ul>
         </div>
         <!-- Pegamos de la libreria de glide en el set-up el siguiente div para los botones del slider -->
