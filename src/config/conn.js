@@ -14,9 +14,9 @@ const pool = mysql.createPool({
 //probamos la conexion:
 pool.getConnection((err,conn)=>{
     if(err){
-        console.log('Error al conectarse a la DB:' + err);
+        console.log('• Error al conectarse a la DB:' + err);
     }else{
-        console.log('Conexion a la DB exitosa');
+        console.log(  '☻ Conexion a la DB exitosa');
         conn.release();
     }
 });

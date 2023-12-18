@@ -37,6 +37,6 @@ app.use("/shop", shopRoutes);
 app.use("/admin", adminRoutes);
 app.use("/auth", authRoutes);
 
-app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+app.listen(PORT, () => console.log(`► Server listening on port ${PORT}`));
 
 //en la terminal nodemon run dev
